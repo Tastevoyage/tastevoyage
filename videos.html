@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Videos | TasteVoyage</title>
+
+    <meta name="description"
+          content="Watch delicious food videos, cooking ideas and culinary journeys from around the world with TasteVoyage.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #faf8f1;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: #031f18;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: #f5c542;
+            font-size: 28px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: #f5c542;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 430px;
+            background:
+                linear-gradient(rgba(3,31,24,.72), rgba(3,31,24,.72)),
+                url("https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1600&q=80")
+                center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            color: #f5c542;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 21px;
+            max-width: 750px;
+            margin: auto;
+        }
+
+        /* INTRO */
+        .intro {
+            max-width: 950px;
+            margin: 70px auto 40px;
+            padding: 0 25px;
+            text-align: center;
+        }
+
+        .intro h2 {
+            color: #063b2d;
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            color: #555;
+            font-size: 17px;
+        }
+
+        /* VIDEO GRID */
+        .videos {
+            max-width: 1200px;
+            margin: 50px auto 90px;
+            padding: 0 25px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .video-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,.10);
+            transition: .3s;
+        }
+
+        .video-card:hover {
+            transform: translateY(-7px);
+        }
+
+        /* VIDEO THUMBNAIL */
+        .video-thumb {
+            position: relative;
+            height: 230px;
+            overflow: hidden;
+        }
+
+        .video-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: .3s;
+        }
+
+        .video-card:hover .video-thumb img {
+            transform: scale(1.05);
+        }
+
+        .play-button {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background: rgba(245,197,66,.95);
+            color: #031f18;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 27px;
+            padding-left: 4px;
+        }
+
+        .video-content {
+            padding: 24px;
+        }
+
+        .video-content span {
+            color: #f5c542;
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .video-content h3 {
+            color: #063b2d;
+            font-size: 23px;
+            margin: 8px 0;
+        }
+
+        .video-content p {
+            color: #666;
+            margin-bottom: 18px;
+        }
+
+        .watch-button {
+            display: inline-block;
+            background: #063b2d;
+            color: white;
+            padding: 10px 19px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .watch-button:hover {
+            background: #f5c542;
+            color: #031f18;
+        }
+
+        /* YOUTUBE SECTION */
+        .youtube-section {
+            background: #063b2d;
+            color: white;
+            padding: 70px 25px;
+            text-align: center;
+        }
+
+        .youtube-section h2 {
+            color: #f5c542;
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .youtube-section p {
+            max-width: 750px;
+            margin: auto;
+            color: #eee;
+            font-size: 17px;
+        }
+
+        .youtube-button {
+            display: inline-block;
+            margin-top: 25px;
+            background: #f5c542;
+            color: #031f18;
+            padding: 13px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .youtube-button:hover {
+            background: white;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #031f18;
+            color: #ddd;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        .footer-logo {
+            color: #f5c542;
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 900px) {
+            .videos {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+        }
+
+        @media (max-width: 650px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .videos {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 380px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .intro h2,
+            .youtube-section h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <a href="index.html" class="logo">TasteVoyage</a>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="world-cuisine.html">World Cuisine</a></li>
+        <li><a href="food-stories.html">Food Stories</a></li>
+        <li><a href="videos.html" class="active">Videos</a></li>
+        <li><a href="about.html">About</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div>
+        <h1>Food Videos</h1>
+
+        <p>
+            Watch delicious recipes, cooking ideas and food journeys
+            from around the world.
+        </p>
+    </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro">
+
+    <h2>Watch & Discover</h2>
+
+    <p>
+        Food comes alive through video. Explore cooking techniques,
+        delicious recipes, food traditions and inspiring culinary
+        journeys with TasteVoyage.
+    </p>
+
+</section>
+
+<!-- VIDEOS -->
+<section class="videos">
+
+    <!-- VIDEO 1 -->
+    <article class="video-card">
+
+        <div class="video-thumb">
+
+            <img
+                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80"
+                alt="Sri Lankan Rice and Curry">
+
+            <div class="play-button">▶</div>
+
+        </div>
+
+        <div class="video-content">
+
+            <span>Sri Lanka</span>
+
+            <h3>Sri Lankan Rice & Curry</h3>
+
+            <p>
+                Discover the flavors, ingredients and traditional
+                preparation behind Sri Lankan rice and curry.
+            </p>
+
+            <a href="recipes/sri-lankan-rice-and-curry.html"
+               class="watch-button">
+                Explore Recipe →
+            </a>
+
+        </div>
+
+    </article>
+
+
+    <!-- VIDEO 2 -->
+    <article class="video-card">
+
+        <div class="video-thumb">
+
+            <img
+                src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=900&q=80"
+                alt="Neapolitan Pizza">
+
+            <div class="play-button">▶</div>
+
+        </div>
+
+        <div class="video-content">
+
+            <span>Italy</span>
+
+            <h3>Neapolitan Pizza</h3>
+
+            <p>
+                Discover the traditional style of one of the world's
+                most famous and loved foods.
+            </p>
+
+            <a href="recipes/neapolitan-pizza.html"
+               class="watch-button">
+                Explore Recipe →
+            </a>
+
+        </div>
+
+    </article>
+
+
+    <!-- VIDEO 3 -->
+    <article class="video-card">
+
+        <div class="video-thumb">
+
+            <img
+                src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&w=900&q=80"
+                alt="Thai Green Curry">
+
+            <div class="play-button">▶</div>
+
+        </div>
+
+        <div class="video-content">
+
+            <span>Thailand</span>
+
+            <h3>Thai Green Curry</h3>
+
+            <p>
+                Explore the perfect balance of spicy, creamy and
+                aromatic Thai flavors.
+            </p>
+
+            <a href="recipes/thai-green-curry.html"
+               class="watch-button">
+                Explore Recipe →
+            </a>
+
+        </div>
+
+    </article>
+
+
+    <!-- VIDEO 4 -->
+    <article class="video-card">
+
+        <div class="video-thumb">
+
+            <img
+                src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80"
+                alt="Indian Masala">
+
+            <div class="play-button">▶</div>
+
+        </div>
+
+        <div class="video-content">
+
+            <span>India</span>
+
+            <h3>Indian Masala</h3>
+
+            <p>
+                Discover aromatic spices and traditional flavors
+                from Indian cuisine.
+            </p>
+
+            <a href="recipes/indian-masala.html"
+               class="watch-button">
+                Explore Recipe →
+            </a>
+
+        </div>
+
+    </article>
+
+
+    <!-- VIDEO 5 -->
+    <article class="video-card">
+
+        <div class="video-thumb">
+
+            <img
+                src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=80"
+                alt="Classic Dessert">
+
+            <div class="play-button">▶</div>
+
+        </div>
+
+        <div class="video-content">
+
+            <span>Desserts</span>
+
+            <h3>Classic Dessert</h3>
+
+            <p>
+                A delicious journey through the world of sweet
+                desserts and beautiful flavors.
+            </p>
+
+            <a href="recipes/classic-dessert.html"
+               class="watch-button">
+                Explore Recipe →
+            </a>
+
+        </div>
+
+    </article>
+
+
+    <!-- VIDEO 6 -->
+    <article class="video-card">
+
+        <div class="video-thumb">
+
+            <img
+                src="https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=900&q=80"
+                alt="Tropical Juice">
+
+            <div class="play-button">▶</div>
+
+        </div>
+
+        <div class="video-content">
+
+            <span>Drinks</span>
+
+            <h3>Fresh Tropical Juice</h3>
+
+            <p>
+                Refresh yourself with a colorful combination of
+                tropical fruits and fresh flavors.
+            </p>
+
+            <a href="recipes/tropical-juice.html"
+               class="watch-button">
+                Explore Recipe →
+            </a>
+
+        </div>
+
+    </article>
+
+</section>
+
+<!-- YOUTUBE -->
+<section class="youtube-section">
+
+    <h2>More Delicious Videos Coming Soon</h2>
+
+    <p>
+        Our TasteVoyage video collection will continue to grow with
+        recipes, food stories, cooking tutorials and culinary journeys.
+    </p>
+
+    <!-- Replace # with your YouTube channel URL later -->
+    <a href="#"
+       class="youtube-button">
+        Visit Our YouTube Channel →
+    </a>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="footer-logo">TasteVoyage</div>
+
+    <p>Discover flavors. Explore cultures. Taste the world.</p>
+
+    <p>© 2026 TasteVoyage. All rights reserved.</p>
+
+</footer>
+
+</body>
+</html>
