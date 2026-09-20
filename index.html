@@ -7,10 +7,10 @@
   <title>TasteVoyage | Discover Flavors Around the World</title>
 
   <meta name="description"
-        content="Explore delicious recipes, world cuisines, food stories and amazing flavors from around the world with TasteVoyage.">
+        content="TasteVoyage takes you on a delicious journey through recipes, world cuisines, food stories and inspiring food videos from around the world.">
 
   <meta name="keywords"
-        content="recipes, food, Sri Lankan food, world cuisine, cooking, desserts, drinks, TasteVoyage">
+        content="TasteVoyage, recipes, world cuisine, Sri Lankan food, Indian food, Thai food, Italian food, food stories, food videos">
 
   <meta name="author" content="TasteVoyage">
 
@@ -27,164 +27,127 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #fffaf2;
-      color: #222;
+      background: #faf8f1;
+      color: #031f18;
       line-height: 1.6;
     }
 
-    /* ================= NAVBAR ================= */
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-    header {
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    /* NAVBAR */
+
+    nav {
+      background: #031f18;
+      color: white;
+      padding: 18px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(20, 20, 20, 0.96);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 3px 15px rgba(0,0,0,0.15);
-    }
-
-    .navbar {
-      max-width: 1200px;
-      margin: auto;
-      min-height: 75px;
-      padding: 0 25px;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
     }
 
     .logo {
-      color: #f4c95d;
-      text-decoration: none;
-      font-size: 28px;
-      font-weight: 800;
+      font-size: 27px;
+      font-weight: bold;
+      color: #f5c542;
       letter-spacing: 1px;
     }
 
-    .logo span {
-      color: #ffffff;
-    }
-
-    nav {
+    .nav-links {
       display: flex;
-      align-items: center;
       gap: 25px;
+      list-style: none;
     }
 
-    nav a {
-      color: #ffffff;
-      text-decoration: none;
+    .nav-links a {
+      color: white;
       font-size: 15px;
-      font-weight: 600;
       transition: 0.3s;
     }
 
-    nav a:hover {
-      color: #f4c95d;
+    .nav-links a:hover,
+    .nav-links .active {
+      color: #f5c542;
     }
 
-    /* ================= HERO ================= */
+    /* HERO */
 
     .hero {
-      min-height: 680px;
-
+      min-height: 85vh;
       background:
-        linear-gradient(
-          rgba(0,0,0,0.52),
-          rgba(0,0,0,0.60)
-        ),
-        url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=2000&q=85")
+        linear-gradient(rgba(3,31,24,0.65), rgba(3,31,24,0.75)),
+        url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1800&q=85")
         center/cover no-repeat;
 
       display: flex;
-      align-items: center;
       justify-content: center;
-
+      align-items: center;
       text-align: center;
       color: white;
-      padding: 80px 20px;
+      padding: 40px 20px;
     }
 
     .hero-content {
       max-width: 850px;
     }
 
-    .hero-small {
-      color: #f4c95d;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      font-size: 14px;
-      font-weight: 700;
-      margin-bottom: 15px;
-    }
-
     .hero h1 {
-      font-size: clamp(45px, 8vw, 82px);
-      line-height: 1;
-      margin-bottom: 25px;
-      font-weight: 900;
+      font-size: 64px;
+      margin-bottom: 15px;
+      color: #f5c542;
     }
 
-    .hero h1 span {
-      color: #f4c95d;
+    .hero h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
     }
 
     .hero p {
-      max-width: 700px;
-      margin: auto;
       font-size: 19px;
-      color: #f5f5f5;
-    }
-
-    .hero-buttons {
-      margin-top: 35px;
-
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
+      margin-bottom: 30px;
+      color: #f5f3e8;
     }
 
     .btn {
       display: inline-block;
-      padding: 14px 28px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 700;
+      background: #f5c542;
+      color: #031f18;
+      padding: 13px 28px;
+      border-radius: 30px;
+      font-weight: bold;
       transition: 0.3s;
+      margin: 5px;
     }
 
-    .btn-primary {
-      background: #f4c95d;
-      color: #191919;
-    }
-
-    .btn-primary:hover {
+    .btn:hover {
       transform: translateY(-3px);
-      background: #ffd978;
+      background: white;
     }
 
-    .btn-outline {
-      border: 2px solid #ffffff;
-      color: #ffffff;
+    .btn-dark {
+      background: #063b2d;
+      color: white;
     }
 
-    .btn-outline:hover {
-      background: #ffffff;
-      color: #222;
+    .btn-dark:hover {
+      background: #f5c542;
+      color: #031f18;
     }
 
-    /* ================= COMMON ================= */
+    /* GENERAL */
 
     section {
-      padding: 85px 20px;
-    }
-
-    .container {
-      max-width: 1150px;
-      margin: auto;
+      padding: 75px 6%;
     }
 
     .section-title {
@@ -192,401 +155,381 @@
       margin-bottom: 45px;
     }
 
-    .section-title small {
-      color: #b38a20;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-weight: 800;
-    }
-
     .section-title h2 {
-      font-size: 40px;
-      margin-top: 8px;
-      color: #222;
+      font-size: 38px;
+      color: #063b2d;
+      margin-bottom: 10px;
     }
 
     .section-title p {
-      max-width: 650px;
-      margin: 12px auto 0;
+      max-width: 700px;
+      margin: auto;
       color: #666;
     }
 
-    /* ================= CATEGORIES ================= */
+    /* CATEGORIES */
 
     .categories {
-      background: #ffffff;
-    }
-
-    .category-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 22px;
+      gap: 25px;
     }
 
     .category-card {
-      position: relative;
-      height: 220px;
+      background: white;
+      border-radius: 15px;
       overflow: hidden;
-      border-radius: 18px;
-      text-decoration: none;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .category-card:hover {
+      transform: translateY(-7px);
     }
 
     .category-card img {
-      width: 100%;
-      height: 100%;
+      height: 210px;
       object-fit: cover;
-      transition: 0.5s;
     }
 
-    .category-card:hover img {
-      transform: scale(1.08);
-    }
-
-    .category-overlay {
-      position: absolute;
-      inset: 0;
-
-      display: flex;
-      align-items: flex-end;
-
+    .category-content {
       padding: 22px;
-
-      background: linear-gradient(
-        transparent,
-        rgba(0,0,0,0.85)
-      );
+      text-align: center;
     }
 
-    .category-overlay h3 {
-      color: white;
-      font-size: 23px;
+    .category-content h3 {
+      color: #063b2d;
+      margin-bottom: 10px;
     }
 
-    /* ================= FEATURED ================= */
-
-    .featured {
-      background: #fffaf2;
+    .category-content p {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 15px;
     }
 
-    .recipe-grid {
+    /* FEATURED RECIPES */
+
+    .recipes-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
+      gap: 30px;
     }
 
     .recipe-card {
       background: white;
-      border-radius: 18px;
+      border-radius: 15px;
       overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.09);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
       transition: 0.3s;
     }
 
     .recipe-card:hover {
       transform: translateY(-7px);
-      box-shadow: 0 14px 35px rgba(0,0,0,0.14);
     }
 
-    .recipe-image {
-      height: 230px;
-      overflow: hidden;
-    }
-
-    .recipe-image img {
-      width: 100%;
-      height: 100%;
+    .recipe-card img {
+      height: 250px;
       object-fit: cover;
-      transition: 0.5s;
-    }
-
-    .recipe-card:hover .recipe-image img {
-      transform: scale(1.06);
     }
 
     .recipe-content {
-      padding: 22px;
-    }
-
-    .recipe-tag {
-      color: #b38a20;
-      font-size: 12px;
-      text-transform: uppercase;
-      font-weight: 800;
-      letter-spacing: 1px;
+      padding: 24px;
     }
 
     .recipe-content h3 {
-      margin: 7px 0;
-      font-size: 22px;
+      color: #063b2d;
+      margin-bottom: 10px;
     }
 
     .recipe-content p {
       color: #666;
-      font-size: 14px;
+      margin-bottom: 15px;
     }
 
-    .recipe-link {
-      display: inline-block;
-      margin-top: 15px;
-      color: #222;
-      font-weight: 700;
-      text-decoration: none;
+    .small-link {
+      color: #063b2d;
+      font-weight: bold;
     }
 
-    .recipe-link:hover {
-      color: #b38a20;
+    .small-link:hover {
+      color: #d39d00;
     }
 
-    /* ================= WORLD CUISINE ================= */
+    /* WORLD CUISINE */
 
-    .world {
-      background: #1c1c1c;
+    .world-section {
+      background: #031f18;
       color: white;
     }
 
-    .world .section-title h2 {
-      color: white;
+    .world-section .section-title h2 {
+      color: #f5c542;
     }
 
-    .world .section-title p {
-      color: #bbbbbb;
+    .world-section .section-title p {
+      color: #ddd;
     }
 
     .world-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      gap: 25px;
     }
 
-    .country-card {
-      background: #282828;
+    .world-card {
+      position: relative;
+      height: 300px;
       border-radius: 15px;
       overflow: hidden;
-      text-align: center;
     }
 
-    .country-card img {
-      width: 100%;
-      height: 180px;
+    .world-card img {
+      height: 100%;
       object-fit: cover;
+      transition: 0.4s;
     }
 
-    .country-card h3 {
-      padding: 18px 10px;
-      color: #f4c95d;
+    .world-card:hover img {
+      transform: scale(1.08);
     }
 
-    /* ================= VIDEO ================= */
+    .world-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.85));
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 22px;
+    }
+
+    .world-overlay h3 {
+      font-size: 25px;
+      margin-bottom: 7px;
+    }
+
+    .world-overlay p {
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .world-link {
+      color: #f5c542;
+      font-weight: bold;
+    }
+
+    /* FOOD STORIES */
+
+    .stories {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .story-box {
+      background: white;
+      padding: 35px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    }
+
+    .story-box h3 {
+      color: #063b2d;
+      font-size: 25px;
+      margin-bottom: 12px;
+    }
+
+    .story-box p {
+      color: #666;
+      margin-bottom: 18px;
+    }
+
+    /* VIDEO */
 
     .video-section {
-      background: #ffffff;
+      background: #f0ede2;
+      text-align: center;
     }
 
     .video-box {
-      max-width: 850px;
+      max-width: 900px;
       margin: auto;
-      aspect-ratio: 16 / 9;
-      background: #151515;
-      border-radius: 20px;
-      overflow: hidden;
+      background: #031f18;
+      color: white;
+      border-radius: 18px;
+      padding: 70px 30px;
+    }
 
+    .play-icon {
+      width: 80px;
+      height: 80px;
+      background: #f5c542;
+      color: #031f18;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-
-      color: white;
-      text-align: center;
-      padding: 30px;
+      font-size: 35px;
+      margin: 0 auto 25px;
     }
 
-    .video-box h3 {
-      font-size: 28px;
+    .video-box h2 {
       margin-bottom: 10px;
     }
 
     .video-box p {
-      color: #cccccc;
+      color: #ddd;
+      margin-bottom: 25px;
     }
 
-    /* ================= STORY ================= */
-
-    .story {
-      background: #fff4d9;
-    }
-
-    .story-content {
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .story-content h2 {
-      font-size: 40px;
-      margin-bottom: 18px;
-    }
-
-    .story-content p {
-      color: #555;
-      font-size: 17px;
-    }
-
-    /* ================= NEWSLETTER ================= */
+    /* NEWSLETTER */
 
     .newsletter {
-      background: #f4c95d;
+      background: #063b2d;
+      color: white;
       text-align: center;
     }
 
     .newsletter h2 {
-      font-size: 36px;
-      margin-bottom: 10px;
+      color: #f5c542;
+      margin-bottom: 12px;
     }
 
     .newsletter p {
       margin-bottom: 25px;
+      color: #ddd;
     }
 
     .newsletter-form {
-      max-width: 550px;
+      max-width: 600px;
       margin: auto;
-
       display: flex;
       gap: 10px;
     }
 
     .newsletter-form input {
       flex: 1;
-      padding: 15px 18px;
+      padding: 14px;
       border: none;
-      border-radius: 50px;
+      border-radius: 30px;
       outline: none;
-      font-size: 15px;
     }
 
     .newsletter-form button {
       border: none;
-      background: #1c1c1c;
-      color: white;
-      padding: 15px 25px;
-      border-radius: 50px;
       cursor: pointer;
-      font-weight: 700;
     }
 
-    /* ================= FOOTER ================= */
+    /* FOOTER */
 
     footer {
-      background: #111111;
-      color: #aaaaaa;
-      padding: 55px 20px 25px;
+      background: #031f18;
+      color: white;
+      padding: 50px 6% 25px;
     }
 
     .footer-grid {
-      max-width: 1150px;
-      margin: auto;
-
       display: grid;
       grid-template-columns: 2fr 1fr 1fr;
       gap: 40px;
+      margin-bottom: 35px;
     }
 
     .footer-brand h2 {
-      color: #f4c95d;
+      color: #f5c542;
       margin-bottom: 12px;
     }
 
     .footer-brand p {
-      max-width: 450px;
+      color: #ccc;
+      max-width: 500px;
     }
 
     .footer-column h3 {
-      color: white;
+      color: #f5c542;
       margin-bottom: 15px;
     }
 
     .footer-column a {
       display: block;
-      color: #aaaaaa;
-      text-decoration: none;
+      color: #ccc;
       margin-bottom: 8px;
     }
 
     .footer-column a:hover {
-      color: #f4c95d;
+      color: #f5c542;
     }
 
     .copyright {
-      max-width: 1150px;
-      margin: 40px auto 0;
+      border-top: 1px solid rgba(255,255,255,0.15);
       padding-top: 20px;
-      border-top: 1px solid #333;
       text-align: center;
+      color: #aaa;
       font-size: 14px;
     }
 
-    /* ================= MOBILE ================= */
+    /* RESPONSIVE */
 
-    @media (max-width: 900px) {
+    @media (max-width: 1000px) {
 
-      nav {
-        gap: 12px;
+      .categories {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      nav a {
-        font-size: 13px;
-      }
-
-      .category-grid,
       .world-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .recipe-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .recipes-grid {
+        grid-template-columns: 1fr 1fr;
       }
     }
 
-    @media (max-width: 650px) {
-
-      .navbar {
-        flex-direction: column;
-        padding: 18px 15px;
-      }
+    @media (max-width: 700px) {
 
       nav {
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
       }
 
-      .hero {
-        min-height: 600px;
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
       }
 
       .hero h1 {
-        font-size: 48px;
+        font-size: 43px;
+      }
+
+      .hero h2 {
+        font-size: 23px;
       }
 
       .hero p {
         font-size: 16px;
       }
 
-      .category-grid,
-      .recipe-grid,
-      .world-grid {
+      .categories,
+      .recipes-grid,
+      .world-grid,
+      .stories,
+      .footer-grid {
         grid-template-columns: 1fr;
-      }
-
-      .section-title h2 {
-        font-size: 32px;
       }
 
       .newsletter-form {
         flex-direction: column;
       }
 
-      .footer-grid {
-        grid-template-columns: 1fr;
+      .newsletter-form input,
+      .newsletter-form button {
+        width: 100%;
+      }
+
+      section {
+        padding: 55px 5%;
       }
     }
   </style>
@@ -594,326 +537,153 @@
 
 <body>
 
-  <!-- ================= HEADER ================= -->
+  <!-- NAVBAR -->
 
-  <header>
-    <div class="navbar">
+  <nav>
+    <a href="index.html" class="logo">TasteVoyage</a>
 
-      <a href="index.html" class="logo">
-        Taste<span>Voyage</span>
-      </a>
-
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="#recipes">Recipes</a>
-        <a href="#world">World Cuisine</a>
-        <a href="#stories">Food Stories</a>
-        <a href="#videos">Videos</a>
-        <a href="#about">About</a>
-      </nav>
-
-    </div>
-  </header>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="recipes.html">Recipes</a></li>
+      <li><a href="world-cuisine.html">World Cuisine</a></li>
+      <li><a href="food-stories.html">Food Stories</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
 
 
-  <!-- ================= HERO ================= -->
+  <!-- HERO -->
 
-  <section class="hero">
+  <header class="hero">
 
     <div class="hero-content">
 
-      <div class="hero-small">
-        A journey through flavor
-      </div>
+      <h1>Taste The World</h1>
 
-      <h1>
-        Taste The <span>World</span>
-      </h1>
+      <h2>A Journey Through Flavor</h2>
 
       <p>
-        Discover delicious recipes, fascinating food stories,
-        traditional dishes and unforgettable flavors from around
-        the world.
+        Discover delicious recipes, explore incredible cuisines,
+        and experience the stories behind the food we love.
       </p>
 
-      <div class="hero-buttons">
-        <a href="#recipes" class="btn btn-primary">
-          Explore Recipes
-        </a>
+      <a href="recipes.html" class="btn">
+        Explore Recipes
+      </a>
 
-        <a href="#world" class="btn btn-outline">
-          Explore Cuisines
-        </a>
-      </div>
+      <a href="world-cuisine.html" class="btn btn-dark">
+        Explore World Cuisine
+      </a>
 
     </div>
 
-  </section>
+  </header>
 
 
-  <!-- ================= CATEGORIES ================= -->
+  <!-- CATEGORIES -->
 
-  <section class="categories">
+  <section>
 
-    <div class="container">
+    <div class="section-title">
 
-      <div class="section-title">
-        <small>Explore</small>
-        <h2>Food Categories</h2>
-        <p>
-          Find your favorite flavors and discover something new.
-        </p>
-      </div>
+      <h2>Explore Our Food World</h2>
 
-      <div class="category-grid">
-
-        <a href="#recipes" class="category-card">
-          <img
-            src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=80"
-            alt="Healthy food">
-          <div class="category-overlay">
-            <h3>Healthy Food</h3>
-          </div>
-        </a>
-
-        <a href="#recipes" class="category-card">
-          <img
-            src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=900&q=80"
-            alt="Rice dishes">
-          <div class="category-overlay">
-            <h3>Rice & Curry</h3>
-          </div>
-        </a>
-
-        <a href="#recipes" class="category-card">
-          <img
-            src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80"
-            alt="Vegetarian food">
-          <div class="category-overlay">
-            <h3>Vegetarian</h3>
-          </div>
-        </a>
-
-        <a href="#recipes" class="category-card">
-          <img
-            src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=80"
-            alt="Dessert">
-          <div class="category-overlay">
-            <h3>Desserts</h3>
-          </div>
-        </a>
-
-      </div>
+      <p>
+        Discover different flavors, ingredients and food traditions
+        from around the world.
+      </p>
 
     </div>
 
-  </section>
+    <div class="categories">
 
+      <div class="category-card">
 
-  <!-- ================= FEATURED RECIPES ================= -->
+        <img
+          src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=85"
+          alt="Healthy Food">
 
-  <section class="featured" id="recipes">
+        <div class="category-content">
 
-    <div class="container">
-
-      <div class="section-title">
-        <small>Featured</small>
-        <h2>Recipes You'll Love</h2>
-        <p>
-          Delicious recipes inspired by kitchens around the world.
-        </p>
-      </div>
-
-      <div class="recipe-grid">
-
-        <article class="recipe-card">
-
-          <div class="recipe-image">
-            <img
-              src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=1000&q=80"
-              alt="Sri Lankan rice and curry">
-          </div>
-
-          <div class="recipe-content">
-            <span class="recipe-tag">Sri Lanka</span>
-
-            <h3>Traditional Rice & Curry</h3>
-
-            <p>
-              A delicious journey into the rich and colorful
-              flavors of Sri Lankan cuisine.
-            </p>
-
-            <a href="#" class="recipe-link">
-              Discover Recipe →
-            </a>
-          </div>
-
-        </article>
-
-
-        <article class="recipe-card">
-
-          <div class="recipe-image">
-            <img
-              src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1000&q=80"
-              alt="Pizza">
-          </div>
-
-          <div class="recipe-content">
-
-            <span class="recipe-tag">Italy</span>
-
-            <h3>Classic Italian Pizza</h3>
-
-            <p>
-              Discover the story and secrets behind one of
-              the world's favorite foods.
-            </p>
-
-            <a href="#" class="recipe-link">
-              Discover Recipe →
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <article class="recipe-card">
-
-          <div class="recipe-image">
-            <img
-              src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=80"
-              alt="Asian food">
-          </div>
-
-          <div class="recipe-content">
-
-            <span class="recipe-tag">Asia</span>
-
-            <h3>Asian Vegetable Delight</h3>
-
-            <p>
-              Fresh vegetables, aromatic spices and beautiful
-              Asian flavors in one delicious dish.
-            </p>
-
-            <a href="#" class="recipe-link">
-              Discover Recipe →
-            </a>
-
-          </div>
-
-        </article>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ================= WORLD CUISINE ================= -->
-
-  <section class="world" id="world">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <small>Explore The World</small>
-
-        <h2>World Cuisine</h2>
-
-        <p>
-          Travel around the world through food.
-        </p>
-
-      </div>
-
-
-      <div class="world-grid">
-
-        <div class="country-card">
-
-          <img
-            src="https://images.unsplash.com/photo-1562565652-a0d8f0c59eb4?auto=format&fit=crop&w=900&q=80"
-            alt="Sri Lankan food">
-
-          <h3>🇱🇰 Sri Lanka</h3>
-
-        </div>
-
-
-        <div class="country-card">
-
-          <img
-            src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=900&q=80"
-            alt="Italian food">
-
-          <h3>🇮🇹 Italy</h3>
-
-        </div>
-
-
-        <div class="country-card">
-
-          <img
-            src="https://images.unsplash.com/photo-1559314809-0d155014e29e?auto=format&fit=crop&w=900&q=80"
-            alt="Thai food">
-
-          <h3>🇹🇭 Thailand</h3>
-
-        </div>
-
-
-        <div class="country-card">
-
-          <img
-            src="https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=900&q=80"
-            alt="Indian food">
-
-          <h3>🇮🇳 India</h3>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ================= VIDEOS ================= -->
-
-  <section class="video-section" id="videos">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <small>Watch & Learn</small>
-
-        <h2>Latest Food Videos</h2>
-
-        <p>
-          Watch delicious recipes and food adventures.
-        </p>
-
-      </div>
-
-
-      <div class="video-box">
-
-        <div>
-
-          <h3>🎬 TasteVoyage Videos</h3>
+          <h3>Healthy Food</h3>
 
           <p>
-            Our cooking videos and food adventures
-            will appear here.
+            Delicious meals made with fresh and wholesome ingredients.
           </p>
+
+          <a href="recipes.html" class="small-link">
+            Explore Recipes →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="category-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=85"
+          alt="Rice and Curry">
+
+        <div class="category-content">
+
+          <h3>Rice & Curry</h3>
+
+          <p>
+            Experience the rich flavors of traditional Sri Lankan cuisine.
+          </p>
+
+          <a href="recipes/sri-lankan-rice-and-curry.html" class="small-link">
+            Discover More →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="category-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=85"
+          alt="Vegetarian Food">
+
+        <div class="category-content">
+
+          <h3>Vegetarian</h3>
+
+          <p>
+            Explore colorful and delicious plant-based dishes.
+          </p>
+
+          <a href="recipes.html" class="small-link">
+            Explore Recipes →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="category-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=85"
+          alt="Desserts">
+
+        <div class="category-content">
+
+          <h3>Desserts</h3>
+
+          <p>
+            Sweet creations from different corners of the world.
+          </p>
+
+          <a href="recipes/classic-dessert.html" class="small-link">
+            Discover Desserts →
+          </a>
 
         </div>
 
@@ -924,23 +694,278 @@
   </section>
 
 
-  <!-- ================= FOOD STORIES ================= -->
+  <!-- FEATURED RECIPES -->
 
-  <section class="story" id="stories">
+  <section>
 
-    <div class="container">
+    <div class="section-title">
 
-      <div class="story-content">
+      <h2>Featured Recipes</h2>
 
-        <h2>Every Dish Has A Story</h2>
+      <p>
+        Some of our favorite recipes for your next delicious adventure.
+      </p>
+
+    </div>
+
+    <div class="recipes-grid">
+
+
+      <div class="recipe-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=1000&q=85"
+          alt="Sri Lankan Rice and Curry">
+
+        <div class="recipe-content">
+
+          <h3>Traditional Rice & Curry</h3>
+
+          <p>
+            A flavorful Sri Lankan meal filled with spices,
+            vegetables and traditional curry.
+          </p>
+
+          <a href="recipes/sri-lankan-rice-and-curry.html" class="small-link">
+            View Recipe →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="recipe-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=1000&q=85"
+          alt="Neapolitan Pizza">
+
+        <div class="recipe-content">
+
+          <h3>Classic Italian Pizza</h3>
+
+          <p>
+            Discover the simple ingredients and traditional
+            techniques behind authentic Italian pizza.
+          </p>
+
+          <a href="recipes/neapolitan-pizza.html" class="small-link">
+            View Recipe →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="recipe-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1000&q=85"
+          alt="Asian Vegetable Dish">
+
+        <div class="recipe-content">
+
+          <h3>Asian Vegetable Delight</h3>
+
+          <p>
+            A colorful combination of fresh vegetables
+            inspired by Asian flavors.
+          </p>
+
+          <a href="recipes.html" class="small-link">
+            Explore Recipes →
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div style="text-align:center; margin-top:35px;">
+
+      <a href="recipes.html" class="btn">
+        View All Recipes
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- WORLD CUISINE -->
+
+  <section class="world-section">
+
+    <div class="section-title">
+
+      <h2>World Cuisine</h2>
+
+      <p>
+        Take a culinary journey across countries and discover
+        the flavors that make every culture unique.
+      </p>
+
+    </div>
+
+
+    <div class="world-grid">
+
+
+      <div class="world-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=900&q=85"
+          alt="Sri Lankan Food">
+
+        <div class="world-overlay">
+
+          <h3>Sri Lanka</h3>
+
+          <p>
+            Spices, curries and unforgettable island flavors.
+          </p>
+
+          <a href="world-cuisine/sri-lanka.html" class="world-link">
+            Explore Sri Lanka →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="world-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=900&q=85"
+          alt="Italian Food">
+
+        <div class="world-overlay">
+
+          <h3>Italy</h3>
+
+          <p>
+            Pizza, pasta and timeless Italian traditions.
+          </p>
+
+          <a href="world-cuisine/italy.html" class="world-link">
+            Explore Italy →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="world-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&w=900&q=85"
+          alt="Thai Food">
+
+        <div class="world-overlay">
+
+          <h3>Thailand</h3>
+
+          <p>
+            Bold spices, fresh herbs and vibrant flavors.
+          </p>
+
+          <a href="world-cuisine/thailand.html" class="world-link">
+            Explore Thailand →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="world-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=900&q=85"
+          alt="Indian Food">
+
+        <div class="world-overlay">
+
+          <h3>India</h3>
+
+          <p>
+            Rich spices, colorful dishes and ancient food traditions.
+          </p>
+
+          <a href="world-cuisine/india.html" class="world-link">
+            Explore India →
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div style="text-align:center; margin-top:40px;">
+
+      <a href="world-cuisine.html" class="btn">
+        View All Countries
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOD STORIES -->
+
+  <section>
+
+    <div class="section-title">
+
+      <h2>Food Stories</h2>
+
+      <p>
+        Food is more than a recipe. Every dish carries a story,
+        a tradition and a connection between people.
+      </p>
+
+    </div>
+
+
+    <div class="stories">
+
+      <div class="story-box">
+
+        <h3>Stories Behind The Food</h3>
 
         <p>
-          Food is more than something we eat.
-          It carries history, culture, traditions and memories.
-          At TasteVoyage, we explore the stories behind
-          the world's most fascinating dishes and bring
-          those flavors closer to you.
+          Discover the history, culture and traditions behind
+          some of the world's most loved dishes.
         </p>
+
+        <a href="food-stories.html" class="btn">
+          Read Food Stories
+        </a>
+
+      </div>
+
+
+      <div class="story-box">
+
+        <h3>Explore Global Flavors</h3>
+
+        <p>
+          From Sri Lankan rice and curry to Italian pizza,
+          every cuisine tells us something about the people
+          and places where it was created.
+        </p>
+
+        <a href="world-cuisine.html" class="small-link">
+          Explore World Cuisine →
+        </a>
 
       </div>
 
@@ -949,50 +974,86 @@
   </section>
 
 
-  <!-- ================= NEWSLETTER ================= -->
+  <!-- VIDEO -->
+
+  <section class="video-section">
+
+    <div class="section-title">
+
+      <h2>Food Videos</h2>
+
+      <p>
+        Watch recipes, cooking ideas and delicious food journeys.
+      </p>
+
+    </div>
+
+
+    <div class="video-box">
+
+      <div class="play-icon">
+        ▶
+      </div>
+
+      <h2>Discover Delicious Food</h2>
+
+      <p>
+        Explore our collection of food videos and cooking inspiration.
+      </p>
+
+      <a href="videos.html" class="btn">
+        Watch Food Videos
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- NEWSLETTER -->
 
   <section class="newsletter">
 
-    <div class="container">
+    <h2>Join The TasteVoyage Journey</h2>
 
-      <h2>Join The TasteVoyage</h2>
+    <p>
+      Get delicious recipes, food stories and culinary inspiration.
+    </p>
 
-      <p>
-        Get new recipes, food stories and delicious inspiration.
-      </p>
 
-      <form class="newsletter-form">
+    <form
+      class="newsletter-form"
+      onsubmit="return subscribeUser(event);">
 
-        <input
-          type="email"
-          placeholder="Enter your email address"
-          required>
+      <input
+        type="email"
+        id="email"
+        placeholder="Enter your email address"
+        required>
 
-        <button type="submit">
-          Subscribe
-        </button>
+      <button type="submit" class="btn">
+        Subscribe
+      </button>
 
-      </form>
-
-    </div>
+    </form>
 
   </section>
 
 
-  <!-- ================= FOOTER ================= -->
+  <!-- FOOTER -->
 
-  <footer id="about">
+  <footer>
 
     <div class="footer-grid">
+
 
       <div class="footer-brand">
 
         <h2>TasteVoyage</h2>
 
         <p>
-          Discover the world through its flavors.
-          Explore recipes, cuisines, food stories and
-          unforgettable culinary experiences.
+          Discover flavors, explore cultures and experience
+          the world through food.
         </p>
 
       </div>
@@ -1002,22 +1063,22 @@
 
         <h3>Explore</h3>
 
-        <a href="#recipes">Recipes</a>
-        <a href="#world">World Cuisine</a>
-        <a href="#stories">Food Stories</a>
-        <a href="#videos">Videos</a>
+        <a href="index.html">Home</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="world-cuisine.html">World Cuisine</a>
+        <a href="food-stories.html">Food Stories</a>
 
       </div>
 
 
       <div class="footer-column">
 
-        <h3>Follow Us</h3>
+        <h3>More</h3>
 
-        <a href="#">YouTube</a>
-        <a href="#">Facebook</a>
-        <a href="#">Instagram</a>
-        <a href="#">TikTok</a>
+        <a href="videos.html">Videos</a>
+        <a href="about.html">About</a>
+        <a href="recipes.html">All Recipes</a>
+        <a href="world-cuisine.html">All Countries</a>
 
       </div>
 
@@ -1032,6 +1093,29 @@
 
   </footer>
 
+
+  <script>
+
+    function subscribeUser(event) {
+
+      event.preventDefault();
+
+      const email = document.getElementById("email").value;
+
+      if (email) {
+
+        alert(
+          "Thank you for joining TasteVoyage! Newsletter features will be available soon."
+        );
+
+        document.getElementById("email").value = "";
+
+      }
+
+      return false;
+    }
+
+  </script>
 
 </body>
 </html>
