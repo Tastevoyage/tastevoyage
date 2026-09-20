@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Recipes | TasteVoyage</title>
+
+    <meta name="description"
+          content="Discover delicious recipes from Sri Lanka and around the world with TasteVoyage.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #faf8f1;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: #031f18;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: #f5c542;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        nav ul li a:hover {
+            color: #f5c542;
+        }
+
+        /* HERO */
+        .hero {
+            background:
+                linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+                url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            height: 420px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            color: white;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 20px;
+        }
+
+        /* SECTION */
+        .section {
+            padding: 60px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 35px;
+            color: #063b2d;
+        }
+
+        .section-title p {
+            color: #666;
+            margin-top: 8px;
+        }
+
+        /* CATEGORIES */
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .category {
+            background: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,.08);
+            transition: .3s;
+        }
+
+        .category:hover {
+            transform: translateY(-6px);
+        }
+
+        .category h3 {
+            color: #063b2d;
+            margin-bottom: 8px;
+        }
+
+        .category p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* RECIPES */
+        .recipes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .recipe-card {
+            background: white;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,.1);
+            transition: .3s;
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .recipe-card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+        }
+
+        .recipe-content {
+            padding: 22px;
+        }
+
+        .recipe-content h3 {
+            color: #063b2d;
+            margin-bottom: 8px;
+        }
+
+        .recipe-content p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .recipe-link {
+            display: inline-block;
+            background: #f5c542;
+            color: #031f18;
+            text-decoration: none;
+            padding: 9px 18px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .recipe-link:hover {
+            background: #dcae22;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #031f18;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 30px;
+        }
+
+        footer span {
+            color: #f5c542;
+        }
+
+        /* MOBILE */
+        @media (max-width: 900px) {
+
+            .categories {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .recipes {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .hero {
+                height: 350px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .categories,
+            .recipes {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 45px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+
+    <div class="logo">
+        TasteVoyage
+    </div>
+
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="#">World Cuisine</a></li>
+        <li><a href="#">Food Stories</a></li>
+        <li><a href="#">Videos</a></li>
+        <li><a href="#">About</a></li>
+    </ul>
+
+</nav>
+
+
+<!-- HERO -->
+<section class="hero">
+
+    <div>
+
+        <h1>Explore Our Recipes</h1>
+
+        <p>
+            Discover delicious flavors from Sri Lanka and around the world.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CATEGORIES -->
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>Recipe Categories</h2>
+
+        <p>
+            Choose a cuisine and start your food journey.
+        </p>
+
+    </div>
+
+
+    <div class="categories">
+
+        <div class="category">
+            <h3>🇱🇰 Sri Lankan Food</h3>
+            <p>Authentic Sri Lankan dishes, curries and traditional flavors.</p>
+        </div>
+
+        <div class="category">
+            <h3>🇮🇳 Indian Food</h3>
+            <p>Discover aromatic spices and delicious Indian recipes.</p>
+        </div>
+
+        <div class="category">
+            <h3>🇹🇭 Thai Food</h3>
+            <p>Experience the sweet, sour and spicy flavors of Thailand.</p>
+        </div>
+
+        <div class="category">
+            <h3>🇮🇹 Italian Food</h3>
+            <p>Classic Italian dishes loved around the world.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FEATURED RECIPES -->
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>Featured Recipes</h2>
+
+        <p>
+            Some delicious recipes to begin your TasteVoyage.
+        </p>
+
+    </div>
+
+
+    <div class="recipes">
+
+
+        <!-- RECIPE 1 -->
+
+        <div class="recipe-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80"
+                alt="Sri Lankan Rice and Curry">
+
+            <div class="recipe-content">
+
+                <h3>Sri Lankan Rice & Curry</h3>
+
+                <p>
+                    A traditional Sri Lankan meal filled with aromatic spices,
+                    vegetables and delicious curries.
+                </p>
+
+                <a href="recipes/sri-lankan-rice-and-curry.html"
+                   class="recipe-link">
+                    View Recipe →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- RECIPE 2 -->
+
+        <div class="recipe-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=900&q=80"
+                alt="Italian Pizza">
+
+            <div class="recipe-content">
+
+                <h3>Neapolitan Pizza</h3>
+
+                <p>
+                    A classic Italian pizza with a soft crust,
+                    tomato sauce and delicious cheese.
+                </p>
+
+                <a href="recipes/neapolitan-pizza.html"
+                   class="recipe-link">
+                    View Recipe →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- RECIPE 3 -->
+
+        <div class="recipe-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&w=900&q=80"
+                alt="Thai Food">
+
+            <div class="recipe-content">
+
+                <h3>Thai Green Curry</h3>
+
+                <p>
+                    A fragrant Thai curry combining coconut milk,
+                    herbs, spices and vegetables.
+                </p>
+
+                <a href="recipes/thai-green-curry.html"
+                   class="recipe-link">
+                    View Recipe →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- RECIPE 4 -->
+
+        <div class="recipe-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=900&q=80"
+                alt="Indian Food">
+
+            <div class="recipe-content">
+
+                <h3>Indian Masala</h3>
+
+                <p>
+                    A rich and aromatic Indian dish packed with
+                    traditional spices.
+                </p>
+
+                <a href="recipes/indian-masala.html"
+                   class="recipe-link">
+                    View Recipe →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- RECIPE 5 -->
+
+        <div class="recipe-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=80"
+                alt="Dessert">
+
+            <div class="recipe-content">
+
+                <h3>Classic Dessert</h3>
+
+                <p>
+                    A sweet and delicious dessert for everyone
+                    who loves something special.
+                </p>
+
+                <a href="recipes/classic-dessert.html"
+                   class="recipe-link">
+                    View Recipe →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- RECIPE 6 -->
+
+        <div class="recipe-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=900&q=80"
+                alt="Fresh Fruit Juice">
+
+            <div class="recipe-content">
+
+                <h3>Fresh Tropical Juice</h3>
+
+                <p>
+                    A refreshing tropical drink made with fresh
+                    fruits and natural flavors.
+                </p>
+
+                <a href="recipes/tropical-juice.html"
+                   class="recipe-link">
+                    View Recipe →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <p>
+        © 2026 <span>TasteVoyage</span>.
+        Discover flavors. Explore the world.
+    </p>
+
+</footer>
+
+</body>
+</html>
