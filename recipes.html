@@ -575,6 +575,60 @@
     </p>
 
 </footer>
+<script>
+  const searchInput = document.getElementById("recipeSearch");
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const recipeCards = document.querySelectorAll(".recipe-card");
 
+  let selectedCategory = "all";
+
+  function filterRecipes() {
+
+    const searchText = searchInput.value.toLowerCase().trim();
+    let visibleCount = 0;
+
+    recipeCards.forEach(card => {
+
+      const category = card.dataset.category || "";
+      const text = card.innerText.toLowerCase();
+
+      const matchesCategory =
+        selectedCategory === "all" ||
+        category === selectedCategory;
+
+      const matchesSearch =
+        text.includes(searchText);
+
+      if (matchesCategory && matchesSearch) {
+        card.style.display = "";
+        visibleCount++;
+      } else {
+        card.style.display = "none";
+      }
+
+    });
+
+  }
+
+  filterButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+      filterButtons.forEach(btn =>
+        btn.classList.remove("active")
+      );
+
+      button.classList.add("active");
+
+      selectedCategory = button.dataset.category;
+
+      filterRecipes();
+
+    });
+
+  });
+
+  searchInput.addEventListener("input", filterRecipes);
+</script>
 </body>
 </html>
