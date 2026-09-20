@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About | TasteVoyage</title>
+
+    <meta name="description"
+          content="Learn more about TasteVoyage, a food and culinary website dedicated to discovering flavors, cultures and stories from around the world.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #faf8f1;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: #031f18;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: #f5c542;
+            font-size: 28px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: #f5c542;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 430px;
+            background:
+                linear-gradient(rgba(3,31,24,.75), rgba(3,31,24,.75)),
+                url("https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1600&q=80")
+                center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            color: #f5c542;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 21px;
+            max-width: 750px;
+            margin: auto;
+        }
+
+        /* ABOUT INTRO */
+        .about-section {
+            max-width: 1100px;
+            margin: 80px auto;
+            padding: 0 25px;
+        }
+
+        .about-section h2 {
+            color: #063b2d;
+            font-size: 36px;
+            margin-bottom: 18px;
+        }
+
+        .about-section p {
+            color: #555;
+            font-size: 17px;
+            margin-bottom: 18px;
+        }
+
+        /* MISSION */
+        .mission {
+            background: #063b2d;
+            color: white;
+            padding: 75px 25px;
+            text-align: center;
+        }
+
+        .mission h2 {
+            color: #f5c542;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .mission p {
+            max-width: 850px;
+            margin: auto;
+            color: #eee;
+            font-size: 17px;
+        }
+
+        /* VALUES */
+        .values {
+            max-width: 1150px;
+            margin: 80px auto;
+            padding: 0 25px;
+        }
+
+        .values-title {
+            text-align: center;
+            color: #063b2d;
+            font-size: 36px;
+            margin-bottom: 45px;
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .value-card {
+            background: white;
+            padding: 35px 25px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,.09);
+            transition: .3s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .value-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .value-card h3 {
+            color: #063b2d;
+            font-size: 23px;
+            margin-bottom: 10px;
+        }
+
+        .value-card p {
+            color: #666;
+        }
+
+        /* WHAT WE OFFER */
+        .offer {
+            max-width: 1100px;
+            margin: 80px auto;
+            padding: 0 25px;
+        }
+
+        .offer h2 {
+            text-align: center;
+            color: #063b2d;
+            font-size: 36px;
+            margin-bottom: 35px;
+        }
+
+        .offer-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .offer-item {
+            background: white;
+            padding: 25px;
+            border-left: 5px solid #f5c542;
+            border-radius: 10px;
+            box-shadow: 0 5px 18px rgba(0,0,0,.07);
+        }
+
+        .offer-item h3 {
+            color: #063b2d;
+            margin-bottom: 7px;
+        }
+
+        .offer-item p {
+            color: #666;
+        }
+
+        /* CTA */
+        .cta {
+            background:
+                linear-gradient(rgba(3,31,24,.85), rgba(3,31,24,.85)),
+                url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1600&q=80")
+                center/cover;
+            padding: 80px 25px;
+            text-align: center;
+            color: white;
+        }
+
+        .cta h2 {
+            color: #f5c542;
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            max-width: 750px;
+            margin: auto;
+            color: #eee;
+            font-size: 17px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 25px;
+            background: #f5c542;
+            color: #031f18;
+            padding: 13px 27px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .cta-button:hover {
+            background: white;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #031f18;
+            color: #ddd;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        .footer-logo {
+            color: #f5c542;
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 900px) {
+            .value-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+        }
+
+        @media (max-width: 650px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .value-grid,
+            .offer-list {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 380px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .about-section h2,
+            .mission h2,
+            .values-title,
+            .offer h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <a href="index.html" class="logo">TasteVoyage</a>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="world-cuisine.html">World Cuisine</a></li>
+        <li><a href="food-stories.html">Food Stories</a></li>
+        <li><a href="videos.html">Videos</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div>
+        <h1>About TasteVoyage</h1>
+
+        <p>
+            Discover flavors, explore cultures and experience
+            the stories behind food from around the world.
+        </p>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section">
+
+    <h2>Welcome to TasteVoyage</h2>
+
+    <p>
+        TasteVoyage is a food discovery platform created for people
+        who love exploring the world through food.
+    </p>
+
+    <p>
+        From traditional Sri Lankan rice and curry to Italian pizza,
+        Thai curry, Indian spices and desserts from around the world,
+        we bring together recipes, food stories, culinary traditions
+        and inspiration in one place.
+    </p>
+
+    <p>
+        We believe that food is not only about taste. Every dish has
+        a story connected to its people, history, culture and
+        traditions.
+    </p>
+
+</section>
+
+<!-- MISSION -->
+<section class="mission">
+
+    <h2>Our Mission</h2>
+
+    <p>
+        Our mission is to make discovering food simple, enjoyable
+        and inspiring. TasteVoyage aims to connect people with
+        different cuisines and cultures while celebrating the
+        diversity of food around the world.
+    </p>
+
+</section>
+
+<!-- VALUES -->
+<section class="values">
+
+    <h2 class="values-title">What We Believe</h2>
+
+    <div class="value-grid">
+
+        <div class="value-card">
+            <div class="value-icon">🌍</div>
+
+            <h3>Explore</h3>
+
+            <p>
+                Discover amazing cuisines, ingredients and food
+                traditions from different parts of the world.
+            </p>
+        </div>
+
+        <div class="value-card">
+            <div class="value-icon">🍴</div>
+
+            <h3>Experience</h3>
+
+            <p>
+                Learn about recipes and cooking traditions while
+                experiencing the flavors behind every dish.
+            </p>
+        </div>
+
+        <div class="value-card">
+            <div class="value-icon">❤️</div>
+
+            <h3>Celebrate</h3>
+
+            <p>
+                Celebrate food, culture, creativity and the people
+                who keep culinary traditions alive.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- WHAT WE OFFER -->
+<section class="offer">
+
+    <h2>What You'll Find Here</h2>
+
+    <div class="offer-list">
+
+        <div class="offer-item">
+            <h3>🍛 Delicious Recipes</h3>
+
+            <p>
+                Explore recipes inspired by cuisines from around
+                the world.
+            </p>
+        </div>
+
+        <div class="offer-item">
+            <h3>🌍 World Cuisine</h3>
+
+            <p>
+                Discover the unique flavors and traditions of
+                different countries.
+            </p>
+        </div>
+
+        <div class="offer-item">
+            <h3>📖 Food Stories</h3>
+
+            <p>
+                Learn the history and stories behind popular foods
+                and culinary traditions.
+            </p>
+        </div>
+
+        <div class="offer-item">
+            <h3>🎥 Food Videos</h3>
+
+            <p>
+                Watch cooking ideas, food journeys and culinary
+                inspiration.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CTA -->
+<section class="cta">
+
+    <h2>Start Your Food Journey</h2>
+
+    <p>
+        Explore recipes, discover world cuisines and uncover the
+        stories behind the food you love.
+    </p>
+
+    <a href="recipes.html" class="cta-button">
+        Explore Recipes →
+    </a>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="footer-logo">TasteVoyage</div>
+
+    <p>Discover flavors. Explore cultures. Taste the world.</p>
+
+    <p>© 2026 TasteVoyage. All rights reserved.</p>
+
+</footer>
+
+</body>
+</html>
