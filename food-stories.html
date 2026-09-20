@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Food Stories | TasteVoyage</title>
+
+    <meta name="description"
+          content="Discover the stories, history, traditions and cultures behind the world's most fascinating foods.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #faf8f1;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: #031f18;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: #f5c542;
+            font-size: 28px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: #f5c542;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 430px;
+            background:
+                linear-gradient(rgba(3,31,24,.72), rgba(3,31,24,.72)),
+                url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1600&q=80")
+                center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            color: #f5c542;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 21px;
+            max-width: 750px;
+            margin: auto;
+        }
+
+        /* INTRO */
+        .intro {
+            max-width: 1000px;
+            margin: 70px auto 40px;
+            padding: 0 25px;
+            text-align: center;
+        }
+
+        .intro h2 {
+            color: #063b2d;
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            color: #555;
+            font-size: 17px;
+        }
+
+        /* STORIES */
+        .stories {
+            max-width: 1200px;
+            margin: 50px auto 90px;
+            padding: 0 25px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .story-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,.10);
+            transition: .3s;
+        }
+
+        .story-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .story-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }
+
+        .story-content {
+            padding: 25px;
+        }
+
+        .story-content span {
+            color: #f5c542;
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .story-content h3 {
+            color: #063b2d;
+            font-size: 25px;
+            margin: 10px 0;
+        }
+
+        .story-content p {
+            color: #666;
+            margin-bottom: 18px;
+        }
+
+        .read-more {
+            display: inline-block;
+            background: #063b2d;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .read-more:hover {
+            background: #f5c542;
+            color: #031f18;
+        }
+
+        /* FEATURE */
+        .feature {
+            background: #063b2d;
+            color: white;
+            padding: 70px 8%;
+            text-align: center;
+        }
+
+        .feature h2 {
+            color: #f5c542;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .feature p {
+            max-width: 850px;
+            margin: auto;
+            font-size: 17px;
+            color: #eee;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #031f18;
+            color: #ddd;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer .footer-logo {
+            color: #f5c542;
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* MOBILE */
+        @media (max-width: 900px) {
+            .stories {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+        }
+
+        @media (max-width: 650px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .stories {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 380px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .intro h2,
+            .feature h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <a href="index.html" class="logo">TasteVoyage</a>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="world-cuisine.html">World Cuisine</a></li>
+        <li><a href="food-stories.html" class="active">Food Stories</a></li>
+        <li><a href="videos.html">Videos</a></li>
+        <li><a href="about.html">About</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div>
+        <h1>Food Stories</h1>
+        <p>
+            Every dish has a story. Discover the history, traditions,
+            people and cultures behind the food we love.
+        </p>
+    </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro">
+    <h2>Stories Behind The Food</h2>
+
+    <p>
+        Food is more than something we eat. It carries history, culture,
+        family traditions and memories from generation to generation.
+        Explore the fascinating stories behind dishes from around the world.
+    </p>
+</section>
+
+<!-- STORIES -->
+<section class="stories">
+
+    <!-- STORY 1 -->
+    <article class="story-card">
+
+        <img
+            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80"
+            alt="Sri Lankan food">
+
+        <div class="story-content">
+            <span>Sri Lanka</span>
+
+            <h3>The Story of Rice & Curry</h3>
+
+            <p>
+                Discover how rice and curry became one of the most
+                important and loved meals in Sri Lankan food culture.
+            </p>
+
+            <a href="recipes/sri-lankan-rice-and-curry.html"
+               class="read-more">
+                Discover Story →
+            </a>
+        </div>
+
+    </article>
+
+    <!-- STORY 2 -->
+    <article class="story-card">
+
+        <img
+            src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=900&q=80"
+            alt="Pizza">
+
+        <div class="story-content">
+            <span>Italy</span>
+
+            <h3>How Pizza Conquered The World</h3>
+
+            <p>
+                From the streets of Naples to restaurants around the
+                world, discover the fascinating journey of pizza.
+            </p>
+
+            <a href="recipes/neapolitan-pizza.html"
+               class="read-more">
+                Discover Story →
+            </a>
+        </div>
+
+    </article>
+
+    <!-- STORY 3 -->
+    <article class="story-card">
+
+        <img
+            src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80"
+            alt="Indian food">
+
+        <div class="story-content">
+            <span>India</span>
+
+            <h3>The World of Indian Spices</h3>
+
+            <p>
+                Explore the history of Indian spices and learn how
+                they influenced cuisines across the world.
+            </p>
+
+            <a href="recipes/indian-masala.html"
+               class="read-more">
+                Discover Story →
+            </a>
+        </div>
+
+    </article>
+
+    <!-- STORY 4 -->
+    <article class="story-card">
+
+        <img
+            src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&w=900&q=80"
+            alt="Thai curry">
+
+        <div class="story-content">
+            <span>Thailand</span>
+
+            <h3>The Art of Thai Curry</h3>
+
+            <p>
+                Discover the balance of spicy, sweet, sour and salty
+                flavors that makes Thai cuisine so special.
+            </p>
+
+            <a href="recipes/thai-green-curry.html"
+               class="read-more">
+                Discover Story →
+            </a>
+        </div>
+
+    </article>
+
+    <!-- STORY 5 -->
+    <article class="story-card">
+
+        <img
+            src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=900&q=80"
+            alt="Japanese sushi">
+
+        <div class="story-content">
+            <span>Japan</span>
+
+            <h3>The Tradition of Japanese Food</h3>
+
+            <p>
+                Learn how seasonality, presentation and traditional
+                techniques shaped Japanese food culture.
+            </p>
+
+            <a href="world-cuisine/japan.html"
+               class="read-more">
+                Discover Story →
+            </a>
+        </div>
+
+    </article>
+
+    <!-- STORY 6 -->
+    <article class="story-card">
+
+        <img
+            src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=80"
+            alt="Dessert">
+
+        <div class="story-content">
+            <span>Global</span>
+
+            <h3>The Sweet Story of Desserts</h3>
+
+            <p>
+                From ancient sweet treats to modern desserts,
+                discover why people around the world love sweet food.
+            </p>
+
+            <a href="recipes/classic-dessert.html"
+               class="read-more">
+                Discover Story →
+            </a>
+        </div>
+
+    </article>
+
+</section>
+
+<!-- FEATURE -->
+<section class="feature">
+
+    <h2>Food Connects The World</h2>
+
+    <p>
+        Different countries may have different ingredients,
+        cooking techniques and traditions, but food has always
+        been one of the most powerful ways people connect with
+        each other. At TasteVoyage, we explore those connections
+        one delicious story at a time.
+    </p>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="footer-logo">TasteVoyage</div>
+
+    <p>Discover flavors. Explore cultures. Taste the world.</p>
+
+    <p>© 2026 TasteVoyage. All rights reserved.</p>
+
+</footer>
+
+</body>
+</html>
