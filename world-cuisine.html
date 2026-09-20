@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>World Cuisine | TasteVoyage</title>
+
+    <meta name="description"
+          content="Explore the world's most delicious cuisines, food cultures, traditional dishes and culinary stories with TasteVoyage.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #faf8f1;
+            color: #031f18;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: #031f18;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: #f5c542;
+            text-decoration: none;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #f5c542;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 420px;
+            background:
+                linear-gradient(rgba(3,31,24,0.72), rgba(3,31,24,0.72)),
+                url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1600&q=80")
+                center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .hero-content {
+            color: white;
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #f5c542;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #f5f5f5;
+        }
+
+        /* INTRO */
+        .intro {
+            max-width: 900px;
+            margin: 70px auto 40px;
+            padding: 0 25px;
+            text-align: center;
+        }
+
+        .intro h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .intro h2 span {
+            color: #f5c542;
+        }
+
+        .intro p {
+            color: #555;
+            font-size: 17px;
+        }
+
+        /* COUNTRY GRID */
+        .countries {
+            max-width: 1200px;
+            margin: 50px auto 90px;
+            padding: 0 25px;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+        }
+
+        .country-card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.10);
+            transition: 0.3s;
+        }
+
+        .country-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 14px 35px rgba(0,0,0,0.16);
+        }
+
+        .country-card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+        }
+
+        .country-content {
+            padding: 22px;
+        }
+
+        .country-content h3 {
+            font-size: 25px;
+            margin-bottom: 8px;
+        }
+
+        .country-content p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .country-link {
+            display: inline-block;
+            background: #063b2d;
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .country-link:hover {
+            background: #f5c542;
+            color: #031f18;
+        }
+
+        /* FEATURE */
+        .feature {
+            background: #063b2d;
+            color: white;
+            padding: 75px 25px;
+            text-align: center;
+        }
+
+        .feature h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .feature h2 span {
+            color: #f5c542;
+        }
+
+        .feature p {
+            max-width: 800px;
+            margin: auto;
+            color: #d8ddd9;
+            font-size: 17px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #031f18;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer .footer-logo {
+            color: #f5c542;
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            color: #bbb;
+            font-size: 14px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 1000px) {
+            .countries {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero {
+                min-height: 350px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .intro h2,
+            .feature h2 {
+                font-size: 30px;
+            }
+
+            .countries {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <a href="index.html" class="logo">TasteVoyage</a>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="recipes.html">Recipes</a></li>
+            <li><a href="world-cuisine.html">World Cuisine</a></li>
+            <li><a href="#">Food Stories</a></li>
+            <li><a href="#">Videos</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Explore <span>World Cuisine</span></h1>
+
+            <p>
+                Discover incredible flavors, traditional dishes,
+                food cultures and culinary stories from around the world.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- INTRO -->
+    <section class="intro">
+
+        <h2>A Journey Through <span>Food</span></h2>
+
+        <p>
+            Every country has its own unique flavors, traditions and stories.
+            Explore the world's cuisines and discover the dishes that make
+            each culture special.
+        </p>
+
+    </section>
+
+
+    <!-- COUNTRIES -->
+    <section class="countries">
+
+        <!-- Sri Lanka -->
+        <div class="country-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=900&q=80"
+                alt="Sri Lankan food">
+
+            <div class="country-content">
+
+                <h3>🇱🇰 Sri Lanka</h3>
+
+                <p>
+                    Discover aromatic spices, rice and curry,
+                    hoppers, sambols and traditional Sri Lankan flavors.
+                </p>
+
+                <a href="#" class="country-link">
+                    Explore Sri Lanka →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- India -->
+        <div class="country-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=900&q=80"
+                alt="Indian food">
+
+            <div class="country-content">
+
+                <h3>🇮🇳 India</h3>
+
+                <p>
+                    Explore India's rich culinary traditions,
+                    colorful spices, curries, breads and street food.
+                </p>
+
+                <a href="#" class="country-link">
+                    Explore India →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Thailand -->
+        <div class="country-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70f1?auto=format&fit=crop&w=900&q=80"
+                alt="Thai food">
+
+            <div class="country-content">
+
+                <h3>🇹🇭 Thailand</h3>
+
+                <p>
+                    Experience Thai cuisine with its perfect balance
+                    of spicy, sweet, sour and salty flavors.
+                </p>
+
+                <a href="#" class="country-link">
+                    Explore Thailand →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Italy -->
+        <div class="country-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=900&q=80"
+                alt="Italian pizza">
+
+            <div class="country-content">
+
+                <h3>🇮🇹 Italy</h3>
+
+                <p>
+                    Discover pizza, pasta, risotto and the timeless
+                    culinary traditions of Italy.
+                </p>
+
+                <a href="#" class="country-link">
+                    Explore Italy →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Japan -->
+        <div class="country-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=900&q=80"
+                alt="Japanese food">
+
+            <div class="country-content">
+
+                <h3>🇯🇵 Japan</h3>
+
+                <p>
+                    Explore sushi, ramen, tempura and the elegant
+                    traditions of Japanese cuisine.
+                </p>
+
+                <a href="#" class="country-link">
+                    Explore Japan →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Mexico -->
+        <div class="country-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?auto=format&fit=crop&w=900&q=80"
+                alt="Mexican food">
+
+            <div class="country-content">
+
+                <h3>🇲🇽 Mexico</h3>
+
+                <p>
+                    Discover tacos, enchiladas, salsa and the bold
+                    flavors of Mexican cuisine.
+                </p>
+
+                <a href="#" class="country-link">
+                    Explore Mexico →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- China -->
+        <div class="country-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=900&q=80"
+                alt="Chinese food">
+
+            <div class="country-content">
+
+                <h3>🇨🇳 China</h3>
+
+                <p>
+                    Explore centuries of culinary tradition through
+                    noodles, dumplings, stir-fries and regional dishes.
+                </p>
+
+                <a href="#" class="country-link">
+                    Explore China →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Turkey -->
+        <div class="country-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80"
+                alt="Turkish food">
+
+            <div class="country-content">
+
+                <h3>🇹🇷 Turkey</h3>
+
+                <p>
+                    Taste kebabs, meze, baklava and the rich culinary
+                    heritage connecting Europe and Asia.
+                </p>
+
+                <a href="#" class="country-link">
+                    Explore Turkey →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURE -->
+    <section class="feature">
+
+        <h2>More Than Just <span>Food</span></h2>
+
+        <p>
+            Food tells the story of a country. Through TasteVoyage,
+            discover the history, traditions, ingredients and people
+            behind some of the world's most loved dishes.
+        </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-logo">
+            TasteVoyage
+        </div>
+
+        <p>
+            Discover flavors. Explore cultures. Taste the world.
+        </p>
+
+        <p>
+            © 2026 TasteVoyage. All rights reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>
