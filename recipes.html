@@ -246,6 +246,62 @@
                 padding: 45px 5%;
             }
         }
+        /* SEARCH & FILTER */
+.recipe-tools {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 25px;
+  text-align: center;
+}
+
+.search-box {
+  width: 100%;
+  max-width: 600px;
+  padding: 16px 22px;
+  border: 2px solid #ddd;
+  border-radius: 35px;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.search-box:focus {
+  border-color: #f5c542;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  background: #063b2d;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: #f5c542;
+  color: #031f18;
+}
+
+.no-results {
+  display: none;
+  text-align: center;
+  padding: 40px 20px;
+  color: #666;
+  font-size: 18px;
+}
     </style>
 </head>
 
