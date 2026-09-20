@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sri Lankan Rice & Curry | TasteVoyage</title>
+
+    <meta name="description"
+          content="Discover the traditional flavors, ingredients, history and cooking method of Sri Lankan Rice & Curry.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #faf8f1;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            background: #031f18;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: #f5c542;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            color: #f5c542;
+        }
+
+        /* HERO */
+
+        .hero {
+            height: 500px;
+
+            background:
+                linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.55)),
+                url("https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1600&q=85");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 21px;
+        }
+
+        /* MAIN */
+
+        .container {
+            width: 84%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .section {
+            padding: 65px 0;
+        }
+
+        .section h2 {
+            color: #063b2d;
+            font-size: 34px;
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            color: #555;
+            margin-bottom: 18px;
+        }
+
+        /* INFO */
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-top: -45px;
+            position: relative;
+        }
+
+        .info-box {
+            background: white;
+            padding: 25px 15px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,.1);
+        }
+
+        .info-box strong {
+            display: block;
+            color: #063b2d;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .info-box span {
+            color: #777;
+        }
+
+        /* INGREDIENTS */
+
+        .ingredients-method {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 50px;
+        }
+
+        .ingredients {
+            background: white;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px rgba(0,0,0,.07);
+        }
+
+        .ingredients ul {
+            list-style: none;
+        }
+
+        .ingredients li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .ingredients li::before {
+            content: "✓";
+            color: #c49a16;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* METHOD */
+
+        .step {
+            margin-bottom: 25px;
+        }
+
+        .step h3 {
+            color: #063b2d;
+            margin-bottom: 6px;
+        }
+
+        /* STORY */
+
+        .story {
+            background: #063b2d;
+            color: white;
+            padding: 55px 8%;
+            border-radius: 16px;
+        }
+
+        .story h2 {
+            color: #f5c542;
+        }
+
+        .story p {
+            color: #eee;
+        }
+
+        /* VIDEO */
+
+        .video-box {
+            background: #031f18;
+            min-height: 300px;
+            border-radius: 16px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            color: white;
+            padding: 30px;
+        }
+
+        .video-box h2 {
+            color: #f5c542;
+        }
+
+        .youtube-btn {
+            display: inline-block;
+            margin-top: 18px;
+            background: #f5c542;
+            color: #031f18;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        .youtube-btn:hover {
+            background: #fff;
+        }
+
+        /* BACK BUTTON */
+
+        .back {
+            display: inline-block;
+            margin-top: 30px;
+            color: #063b2d;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back:hover {
+            color: #c49a16;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #031f18;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 30px;
+        }
+
+        footer span {
+            color: #f5c542;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 900px) {
+
+            .info-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .ingredients-method {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 44px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero {
+                height: 400px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .container {
+                width: 90%;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .section {
+                padding: 45px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="logo">
+        TasteVoyage
+    </div>
+
+    <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../recipes.html">Recipes</a></li>
+        <li><a href="#">World Cuisine</a></li>
+        <li><a href="#">Food Stories</a></li>
+        <li><a href="#">Videos</a></li>
+        <li><a href="#">About</a></li>
+    </ul>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>Sri Lankan Rice & Curry</h1>
+
+        <p>
+            A traditional journey through the rich, aromatic and colorful
+            flavors of Sri Lanka.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- RECIPE INFO -->
+
+<div class="container">
+
+    <div class="info-grid">
+
+        <div class="info-box">
+            <strong>Preparation</strong>
+            <span>20 minutes</span>
+        </div>
+
+        <div class="info-box">
+            <strong>Cooking</strong>
+            <span>45 minutes</span>
+        </div>
+
+        <div class="info-box">
+            <strong>Servings</strong>
+            <span>4 people</span>
+        </div>
+
+        <div class="info-box">
+            <strong>Cuisine</strong>
+            <span>Sri Lankan</span>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- INTRODUCTION -->
+
+<section class="section">
+
+    <div class="container">
+
+        <h2>About This Dish</h2>
+
+        <p>
+            Sri Lankan Rice & Curry is more than just a meal. It is one of
+            the most recognizable expressions of Sri Lankan food culture.
+            A typical plate can bring together steamed rice, several
+            vegetable curries, dhal, sambols, mallung and sometimes fish,
+            chicken or meat.
+        </p>
+
+        <p>
+            The beauty of Sri Lankan rice and curry comes from the balance
+            between different flavors and textures. Coconut milk creates
+            richness, roasted spices add warmth, fresh herbs bring aroma,
+            while sambols and pickles provide brightness and heat.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- INGREDIENTS + METHOD -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="ingredients-method">
+
+            <!-- INGREDIENTS -->
+
+            <div class="ingredients">
+
+                <h2>Ingredients</h2>
+
+                <ul>
+
+                    <li>2 cups white rice</li>
+
+                    <li>1 cup red lentils</li>
+
+                    <li>1 onion, sliced</li>
+
+                    <li>2 cloves garlic</li>
+
+                    <li>1 teaspoon turmeric</li>
+
+                    <li>2 teaspoons curry powder</li>
+
+                    <li>1 teaspoon chili powder</li>
+
+                    <li>1 cup coconut milk</li>
+
+                    <li>Green chilies</li>
+
+                    <li>Curry leaves</li>
+
+                    <li>Pandan leaves</li>
+
+                    <li>Salt to taste</li>
+
+                    <li>Cooking oil</li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- METHOD -->
+
+            <div>
+
+                <h2>How To Prepare</h2>
+
+                <div class="step">
+
+                    <h3>01. Prepare the rice</h3>
+
+                    <p>
+                        Wash the rice thoroughly and cook it with the
+                        appropriate amount of water until the grains become
+                        soft and fluffy.
+                    </p>
+
+                </div>
+
+                <div class="step">
+
+                    <h3>02. Prepare the dhal curry</h3>
+
+                    <p>
+                        Wash the lentils and cook them with turmeric,
+                        onion, garlic and salt. Add coconut milk and simmer
+                        gently until creamy.
+                    </p>
+
+                </div>
+
+                <div class="step">
+
+                    <h3>03. Prepare the curry base</h3>
+
+                    <p>
+                        Heat oil and add onion, curry leaves, pandan leaves
+                        and green chilies. Add the spices and cook gently
+                        until aromatic.
+                    </p>
+
+                </div>
+
+                <div class="step">
+
+                    <h3>04. Add the vegetables</h3>
+
+                    <p>
+                        Add your chosen vegetables and cook with coconut
+                        milk and spices until tender.
+                    </p>
+
+                </div>
+
+                <div class="step">
+
+                    <h3>05. Serve</h3>
+
+                    <p>
+                        Place steamed rice on a plate and arrange the
+                        different curries around it. Finish with a fresh
+                        sambol or mallung for extra flavor.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- HISTORY -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="story">
+
+            <h2>The Story Behind Sri Lankan Rice & Curry</h2>
+
+            <p>
+                Rice has been an important part of Sri Lankan food culture
+                for centuries. The island's agricultural traditions,
+                especially its ancient rice-growing communities, helped
+                make rice a central part of everyday meals.
+            </p>
+
+            <p>
+                Over generations, Sri Lankan cooks developed a remarkable
+                variety of curries using local ingredients such as coconut,
+                cinnamon, curry leaves, pandan, chili and traditional spice
+                blends.
+            </p>
+
+            <p>
+                Unlike a single curry served with rice, a Sri Lankan
+                "rice and curry" meal often contains several dishes at
+                once. This variety is one of the characteristics that makes
+                the meal so memorable.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- VIDEO -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="video-box">
+
+            <div>
+
+                <h2>Watch The Recipe</h2>
+
+                <p>
+                    Follow TasteVoyage for food videos, cooking ideas
+                    and delicious journeys around the world.
+                </p>
+
+                <!-- Replace # with your YouTube video link -->
+
+                <a href="#"
+                   class="youtube-btn"
+                   target="_blank">
+                    ▶ Watch on YouTube
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- BACK -->
+
+<div class="container">
+
+    <a href="../recipes.html" class="back">
+        ← Back to Recipes
+    </a>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 <span>TasteVoyage</span>.
+        Discover flavors. Explore the world.
+    </p>
+
+</footer>
+
+</body>
+</html>
