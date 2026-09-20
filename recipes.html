@@ -39,6 +39,7 @@
             color: #f5c542;
             font-size: 28px;
             font-weight: bold;
+            text-decoration: none;
         }
 
         nav ul {
@@ -134,6 +135,63 @@
         .category p {
             color: #777;
             font-size: 14px;
+        }
+
+        /* SEARCH & FILTER */
+        .recipe-tools {
+            max-width: 1100px;
+            margin: 0 auto 45px;
+            padding: 0 25px;
+            text-align: center;
+        }
+
+        .search-box {
+            width: 100%;
+            max-width: 650px;
+            padding: 16px 22px;
+            border: 2px solid #ddd;
+            border-radius: 35px;
+            font-size: 16px;
+            outline: none;
+            transition: .3s;
+        }
+
+        .search-box:focus {
+            border-color: #f5c542;
+            box-shadow: 0 5px 20px rgba(0,0,0,.08);
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            background: #063b2d;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            transition: .3s;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #f5c542;
+            color: #031f18;
+        }
+
+        .no-results {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 18px;
         }
 
         /* RECIPES */
@@ -246,62 +304,6 @@
                 padding: 45px 5%;
             }
         }
-        /* SEARCH & FILTER */
-.recipe-tools {
-  max-width: 1100px;
-  margin: 40px auto;
-  padding: 0 25px;
-  text-align: center;
-}
-
-.search-box {
-  width: 100%;
-  max-width: 600px;
-  padding: 16px 22px;
-  border: 2px solid #ddd;
-  border-radius: 35px;
-  font-size: 16px;
-  outline: none;
-  transition: 0.3s;
-}
-
-.search-box:focus {
-  border-color: #f5c542;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-}
-
-.filter-buttons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 25px;
-}
-
-.filter-btn {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 25px;
-  background: #063b2d;
-  color: white;
-  cursor: pointer;
-  font-size: 14px;
-  transition: 0.3s;
-}
-
-.filter-btn:hover,
-.filter-btn.active {
-  background: #f5c542;
-  color: #031f18;
-}
-
-.no-results {
-  display: none;
-  text-align: center;
-  padding: 40px 20px;
-  color: #666;
-  font-size: 18px;
-}
     </style>
 </head>
 
@@ -310,9 +312,9 @@
 <!-- NAVIGATION -->
 <nav>
 
-    <div class="logo">
+    <a href="index.html" class="logo">
         TasteVoyage
-    </div>
+    </a>
 
     <ul>
         <li><a href="index.html">Home</a></li>
@@ -360,22 +362,30 @@
 
         <div class="category">
             <h3>🇱🇰 Sri Lankan Food</h3>
-            <p>Authentic Sri Lankan dishes, curries and traditional flavors.</p>
+            <p>
+                Authentic Sri Lankan dishes, curries and traditional flavors.
+            </p>
         </div>
 
         <div class="category">
             <h3>🇮🇳 Indian Food</h3>
-            <p>Discover aromatic spices and delicious Indian recipes.</p>
+            <p>
+                Discover aromatic spices and delicious Indian recipes.
+            </p>
         </div>
 
         <div class="category">
             <h3>🇹🇭 Thai Food</h3>
-            <p>Experience the sweet, sour and spicy flavors of Thailand.</p>
+            <p>
+                Experience the sweet, sour and spicy flavors of Thailand.
+            </p>
         </div>
 
         <div class="category">
             <h3>🇮🇹 Italian Food</h3>
-            <p>Classic Italian dishes loved around the world.</p>
+            <p>
+                Classic Italian dishes loved around the world.
+            </p>
         </div>
 
     </div>
@@ -397,12 +407,60 @@
     </div>
 
 
+    <!-- SEARCH & FILTER -->
+
+    <div class="recipe-tools">
+
+        <input
+            type="text"
+            id="recipeSearch"
+            class="search-box"
+            placeholder="🔎 Search recipes..."
+        >
+
+        <div class="filter-buttons">
+
+            <button class="filter-btn active" data-category="all">
+                All
+            </button>
+
+            <button class="filter-btn" data-category="sri-lankan">
+                🇱🇰 Sri Lankan
+            </button>
+
+            <button class="filter-btn" data-category="indian">
+                🇮🇳 Indian
+            </button>
+
+            <button class="filter-btn" data-category="thai">
+                🇹🇭 Thai
+            </button>
+
+            <button class="filter-btn" data-category="italian">
+                🇮🇹 Italian
+            </button>
+
+            <button class="filter-btn" data-category="dessert">
+                🍰 Desserts
+            </button>
+
+            <button class="filter-btn" data-category="drinks">
+                🥤 Drinks
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- RECIPE CARDS -->
+
     <div class="recipes">
 
 
         <!-- RECIPE 1 -->
 
-        <div class="recipe-card">
+        <div class="recipe-card" data-category="sri-lankan">
 
             <img
                 src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80"
@@ -429,7 +487,7 @@
 
         <!-- RECIPE 2 -->
 
-        <div class="recipe-card">
+        <div class="recipe-card" data-category="italian">
 
             <img
                 src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=900&q=80"
@@ -456,11 +514,11 @@
 
         <!-- RECIPE 3 -->
 
-        <div class="recipe-card">
+        <div class="recipe-card" data-category="thai">
 
             <img
                 src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&w=900&q=80"
-                alt="Thai Food">
+                alt="Thai Green Curry">
 
             <div class="recipe-content">
 
@@ -483,11 +541,11 @@
 
         <!-- RECIPE 4 -->
 
-        <div class="recipe-card">
+        <div class="recipe-card" data-category="indian">
 
             <img
                 src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=900&q=80"
-                alt="Indian Food">
+                alt="Indian Masala">
 
             <div class="recipe-content">
 
@@ -510,11 +568,11 @@
 
         <!-- RECIPE 5 -->
 
-        <div class="recipe-card">
+        <div class="recipe-card" data-category="dessert">
 
             <img
                 src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=80"
-                alt="Dessert">
+                alt="Classic Dessert">
 
             <div class="recipe-content">
 
@@ -537,11 +595,11 @@
 
         <!-- RECIPE 6 -->
 
-        <div class="recipe-card">
+        <div class="recipe-card" data-category="drinks">
 
             <img
                 src="https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=900&q=80"
-                alt="Fresh Fruit Juice">
+                alt="Fresh Tropical Juice">
 
             <div class="recipe-content">
 
@@ -563,6 +621,13 @@
 
     </div>
 
+
+    <!-- NO RESULTS -->
+
+    <div id="noResults" class="no-results">
+        😔 No recipes found. Try another search.
+    </div>
+
 </section>
 
 
@@ -575,60 +640,112 @@
     </p>
 
 </footer>
+
+
+<!-- SEARCH & FILTER JAVASCRIPT -->
+
 <script>
-  const searchInput = document.getElementById("recipeSearch");
-  const filterButtons = document.querySelectorAll(".filter-btn");
-  const recipeCards = document.querySelectorAll(".recipe-card");
 
-  let selectedCategory = "all";
+    const searchInput = document.getElementById("recipeSearch");
 
-  function filterRecipes() {
+    const filterButtons =
+        document.querySelectorAll(".filter-btn");
 
-    const searchText = searchInput.value.toLowerCase().trim();
-    let visibleCount = 0;
+    const recipeCards =
+        document.querySelectorAll(".recipe-card");
 
-    recipeCards.forEach(card => {
+    const noResults =
+        document.getElementById("noResults");
 
-      const category = card.dataset.category || "";
-      const text = card.innerText.toLowerCase();
 
-      const matchesCategory =
-        selectedCategory === "all" ||
-        category === selectedCategory;
+    let selectedCategory = "all";
 
-      const matchesSearch =
-        text.includes(searchText);
 
-      if (matchesCategory && matchesSearch) {
-        card.style.display = "";
-        visibleCount++;
-      } else {
-        card.style.display = "none";
-      }
+    function filterRecipes() {
+
+        const searchText =
+            searchInput.value.toLowerCase().trim();
+
+        let visibleCount = 0;
+
+
+        recipeCards.forEach(card => {
+
+            const category =
+                card.dataset.category || "";
+
+            const text =
+                card.innerText.toLowerCase();
+
+
+            const matchesCategory =
+                selectedCategory === "all" ||
+                category === selectedCategory;
+
+
+            const matchesSearch =
+                text.includes(searchText);
+
+
+            if (matchesCategory && matchesSearch) {
+
+                card.style.display = "";
+
+                visibleCount++;
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+
+        if (visibleCount === 0) {
+
+            noResults.style.display = "block";
+
+        } else {
+
+            noResults.style.display = "none";
+
+        }
+
+    }
+
+
+    filterButtons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            filterButtons.forEach(btn => {
+
+                btn.classList.remove("active");
+
+            });
+
+
+            button.classList.add("active");
+
+
+            selectedCategory =
+                button.dataset.category;
+
+
+            filterRecipes();
+
+        });
 
     });
 
-  }
 
-  filterButtons.forEach(button => {
+    searchInput.addEventListener(
+        "input",
+        filterRecipes
+    );
 
-    button.addEventListener("click", () => {
-
-      filterButtons.forEach(btn =>
-        btn.classList.remove("active")
-      );
-
-      button.classList.add("active");
-
-      selectedCategory = button.dataset.category;
-
-      filterRecipes();
-
-    });
-
-  });
-
-  searchInput.addEventListener("input", filterRecipes);
 </script>
+
 </body>
 </html>
