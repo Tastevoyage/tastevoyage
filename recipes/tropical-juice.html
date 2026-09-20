@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Fresh Tropical Juice | TasteVoyage</title>
+
+  <meta name="description"
+        content="Discover how to make a refreshing Fresh Tropical Juice with tropical fruits, natural sweetness and a delicious TasteVoyage twist.">
+
+  <meta name="keywords"
+        content="tropical juice, fresh fruit juice, tropical drink, healthy juice, TasteVoyage">
+
+  <meta name="author" content="TasteVoyage">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #faf8f1;
+      color: #222;
+      line-height: 1.7;
+    }
+
+    /* NAVBAR */
+    nav {
+      background: #031f18;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      color: #f5c542;
+      font-size: 28px;
+      font-weight: bold;
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #f5c542;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 70vh;
+      background:
+        linear-gradient(rgba(3,31,24,0.58), rgba(3,31,24,0.72)),
+        url("https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=1600&q=85")
+        center/cover no-repeat;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      color: white;
+    }
+
+    .hero-content span {
+      color: #f5c542;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .hero-content h1 {
+      font-size: 58px;
+      margin: 15px 0;
+      line-height: 1.1;
+    }
+
+    .hero-content p {
+      font-size: 20px;
+      color: #f5f5f5;
+    }
+
+    /* RECIPE INFO */
+    .recipe-info {
+      max-width: 1000px;
+      margin: -45px auto 50px;
+      position: relative;
+      background: white;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+      border-radius: 15px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      overflow: hidden;
+    }
+
+    .info-box {
+      text-align: center;
+      padding: 25px 15px;
+      border-right: 1px solid #eee;
+    }
+
+    .info-box:last-child {
+      border-right: none;
+    }
+
+    .info-box strong {
+      display: block;
+      color: #063b2d;
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+
+    .info-box span {
+      color: #777;
+      font-size: 14px;
+    }
+
+    /* MAIN CONTENT */
+    .container {
+      max-width: 1050px;
+      margin: auto;
+      padding: 0 25px 70px;
+    }
+
+    section {
+      margin-bottom: 55px;
+    }
+
+    section h2 {
+      color: #063b2d;
+      font-size: 32px;
+      margin-bottom: 18px;
+      position: relative;
+    }
+
+    section h2::after {
+      content: "";
+      display: block;
+      width: 55px;
+      height: 4px;
+      background: #f5c542;
+      margin-top: 8px;
+      border-radius: 3px;
+    }
+
+    .intro {
+      font-size: 18px;
+      color: #555;
+    }
+
+    /* INGREDIENTS */
+    .ingredients {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 50px;
+      margin-top: 20px;
+    }
+
+    .ingredients li {
+      list-style: none;
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+      color: #444;
+    }
+
+    .ingredients li::before {
+      content: "✓";
+      color: #f5c542;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    /* METHOD */
+    .steps {
+      counter-reset: step;
+    }
+
+    .step {
+      position: relative;
+      padding: 20px 20px 20px 70px;
+      background: white;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 20px;
+      top: 18px;
+      width: 35px;
+      height: 35px;
+      background: #063b2d;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+    }
+
+    .step h3 {
+      color: #063b2d;
+      margin-bottom: 5px;
+    }
+
+    /* STORY */
+    .story {
+      background: #063b2d;
+      color: white;
+      padding: 40px;
+      border-radius: 15px;
+    }
+
+    .story h2 {
+      color: #f5c542;
+    }
+
+    .story h2::after {
+      background: white;
+    }
+
+    .story p {
+      color: #eee;
+      font-size: 17px;
+    }
+
+    /* TIPS */
+    .tips {
+      background: #fff;
+      border-left: 5px solid #f5c542;
+      padding: 25px 30px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+      border-radius: 8px;
+    }
+
+    .tips li {
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    /* VIDEO */
+    .video-box {
+      background: #031f18;
+      color: white;
+      padding: 55px 25px;
+      text-align: center;
+      border-radius: 15px;
+    }
+
+    .video-box h2 {
+      color: #f5c542;
+    }
+
+    .video-box h2::after {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .video-box p {
+      margin-bottom: 25px;
+      color: #ddd;
+    }
+
+    .video-btn {
+      display: inline-block;
+      padding: 13px 28px;
+      background: #f5c542;
+      color: #031f18;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+
+    .video-btn:hover {
+      background: white;
+    }
+
+    /* BACK BUTTON */
+    .back-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 13px 25px;
+      background: #063b2d;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background: #f5c542;
+      color: #031f18;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #031f18;
+      color: white;
+      text-align: center;
+      padding: 35px 20px;
+    }
+
+    footer .footer-logo {
+      color: #f5c542;
+      font-size: 25px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    footer p {
+      color: #bbb;
+      font-size: 14px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .hero {
+        min-height: 60vh;
+      }
+
+      .hero-content h1 {
+        font-size: 40px;
+      }
+
+      .hero-content p {
+        font-size: 17px;
+      }
+
+      .recipe-info {
+        grid-template-columns: 1fr 1fr;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+
+      .info-box {
+        border-bottom: 1px solid #eee;
+      }
+
+      .ingredients {
+        grid-template-columns: 1fr;
+      }
+
+      section h2 {
+        font-size: 27px;
+      }
+
+      .story {
+        padding: 28px 22px;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .hero-content h1 {
+        font-size: 34px;
+      }
+
+      .recipe-info {
+        grid-template-columns: 1fr;
+      }
+
+      .info-box {
+        border-right: none;
+      }
+
+      .step {
+        padding-left: 60px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="../index.html" class="logo">TasteVoyage</a>
+
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../recipes.html">Recipes</a></li>
+      <li><a href="../index.html#world-cuisine">World Cuisine</a></li>
+      <li><a href="../index.html#food-stories">Food Stories</a></li>
+      <li><a href="../index.html#videos">Videos</a></li>
+      <li><a href="../index.html#about">About</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+      <span>Refreshing • Tropical • Natural</span>
+
+      <h1>Fresh Tropical Juice</h1>
+
+      <p>
+        A vibrant blend of tropical fruits made to bring sunshine,
+        freshness and natural sweetness into every glass.
+      </p>
+    </div>
+  </header>
+
+
+  <!-- RECIPE INFO -->
+  <div class="recipe-info">
+
+    <div class="info-box">
+      <strong>10 min</strong>
+      <span>Preparation</span>
+    </div>
+
+    <div class="info-box">
+      <strong>0 min</strong>
+      <span>Cooking</span>
+    </div>
+
+    <div class="info-box">
+      <strong>4</strong>
+      <span>Servings</span>
+    </div>
+
+    <div class="info-box">
+      <strong>Drinks</strong>
+      <span>Category</span>
+    </div>
+
+  </div>
+
+
+  <!-- MAIN -->
+  <main class="container">
+
+    <!-- INTRO -->
+    <section>
+      <h2>About This Tropical Juice</h2>
+
+      <p class="intro">
+        Fresh Tropical Juice is a colourful and refreshing drink made
+        with naturally sweet tropical fruits. It is perfect for hot
+        afternoons, family gatherings, breakfast or simply whenever
+        you want something fresh and delicious.
+      </p>
+
+      <br>
+
+      <p class="intro">
+        The beauty of this drink is its flexibility. You can combine
+        different fruits depending on the season and create your own
+        unique flavour. Mango, pineapple, papaya, passion fruit and
+        orange are just a few delicious possibilities.
+      </p>
+    </section>
+
+
+    <!-- INGREDIENTS -->
+    <section>
+      <h2>Ingredients</h2>
+
+      <ul class="ingredients">
+
+        <li>1 cup fresh pineapple pieces</li>
+
+        <li>1 cup ripe mango pieces</li>
+
+        <li>1 cup fresh papaya pieces</li>
+
+        <li>1 cup fresh orange juice</li>
+
+        <li>½ cup cold water</li>
+
+        <li>1–2 tablespoons honey or sugar</li>
+
+        <li>1 tablespoon fresh lime juice</li>
+
+        <li>Ice cubes as needed</li>
+
+        <li>Passion fruit pulp (optional)</li>
+
+        <li>Fresh mint leaves for garnish</li>
+
+      </ul>
+    </section>
+
+
+    <!-- METHOD -->
+    <section>
+      <h2>How To Make It</h2>
+
+      <div class="steps">
+
+        <div class="step">
+          <h3>Prepare the Fruits</h3>
+          <p>
+            Wash the fruits thoroughly and cut the pineapple, mango
+            and papaya into small pieces.
+          </p>
+        </div>
+
+        <div class="step">
+          <h3>Blend</h3>
+          <p>
+            Add the prepared fruits, orange juice and cold water into
+            a blender. Blend until smooth and creamy.
+          </p>
+        </div>
+
+        <div class="step">
+          <h3>Balance the Flavour</h3>
+          <p>
+            Add fresh lime juice and taste the mixture. If necessary,
+            add a little honey or sugar according to your preference.
+          </p>
+        </div>
+
+        <div class="step">
+          <h3>Chill the Juice</h3>
+          <p>
+            Add ice cubes and blend briefly, or chill the juice in the
+            refrigerator for a few minutes.
+          </p>
+        </div>
+
+        <div class="step">
+          <h3>Serve Fresh</h3>
+          <p>
+            Pour into chilled glasses and garnish with fresh mint,
+            fruit pieces or passion fruit pulp.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- STORY -->
+    <section class="story">
+
+      <h2>The Story Behind Tropical Drinks</h2>
+
+      <p>
+        Tropical fruit drinks have long been part of warm-climate food
+        cultures around the world. Countries across South Asia,
+        Southeast Asia, the Caribbean and Latin America have developed
+        their own refreshing drinks using fruits that grow naturally
+        in their regions.
+      </p>
+
+      <br>
+
+      <p>
+        In Sri Lanka, the abundance of tropical fruits makes fresh
+        fruit drinks especially popular. Pineapple, papaya, mango,
+        wood apple, passion fruit and many other local fruits can be
+        transformed into refreshing drinks enjoyed throughout the
+        year.
+      </p>
+
+      <br>
+
+      <p>
+        Today, tropical juices continue to bring together traditional
+        ingredients and modern flavours, making them a simple but
+        beautiful part of food culture.
+      </p>
+
+    </section>
+
+
+    <!-- TIPS -->
+    <section>
+
+      <h2>Chef's Tips</h2>
+
+      <div class="tips">
+
+        <ul>
+
+          <li>
+            Use fully ripe fruits for the best natural sweetness.
+          </li>
+
+          <li>
+            Chill the fruits before blending for a naturally cold drink.
+          </li>
+
+          <li>
+            Fresh lime juice helps balance very sweet fruits.
+          </li>
+
+          <li>
+            Avoid adding too much sugar before tasting the juice.
+          </li>
+
+          <li>
+            For a thicker smoothie-style drink, reduce the amount of water.
+          </li>
+
+          <li>
+            For an extra tropical flavour, add fresh passion fruit pulp.
+          </li>
+
+        </ul>
+
+      </div>
+
+    </section>
+
+
+    <!-- VIDEO -->
+    <section class="video-box">
+
+      <h2>Watch The Recipe</h2>
+
+      <p>
+        Watch our TasteVoyage video and discover how to create
+        a refreshing tropical drink at home.
+      </p>
+
+      <a href="#" class="video-btn">
+        ▶ Watch on YouTube
+      </a>
+
+    </section>
+
+
+    <!-- BACK -->
+    <a href="../recipes.html" class="back-btn">
+      ← Back to Recipes
+    </a>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-logo">
+      TasteVoyage
+    </div>
+
+    <p>
+      Discover flavors. Explore cultures. Taste the world.
+    </p>
+
+    <p>
+      © 2026 TasteVoyage. All rights reserved.
+    </p>
+
+  </footer>
+
+</body>
+</html>
