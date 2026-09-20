@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Thai Green Curry | TasteVoyage</title>
+
+    <meta name="description"
+          content="Discover Thai Green Curry, its ingredients, preparation method, history and traditional flavors with TasteVoyage.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #faf8f1;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            background: #031f18;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: #f5c542;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            color: #f5c542;
+        }
+
+        /* HERO */
+
+        .hero {
+            height: 500px;
+
+            background:
+                linear-gradient(rgba(0,0,0,.38), rgba(0,0,0,.58)),
+                url("https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&w=1600&q=85");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 21px;
+        }
+
+        /* MAIN */
+
+        .container {
+            width: 84%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .section {
+            padding: 65px 0;
+        }
+
+        .section h2 {
+            color: #063b2d;
+            font-size: 34px;
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            color: #555;
+            margin-bottom: 18px;
+        }
+
+        /* INFO */
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-top: -45px;
+            position: relative;
+        }
+
+        .info-box {
+            background: white;
+            padding: 25px 15px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,.1);
+        }
+
+        .info-box strong {
+            display: block;
+            color: #063b2d;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .info-box span {
+            color: #777;
+        }
+
+        /* INGREDIENTS + METHOD */
+
+        .ingredients-method {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 50px;
+        }
+
+        .ingredients {
+            background: white;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px rgba(0,0,0,.07);
+        }
+
+        .ingredients ul {
+            list-style: none;
+        }
+
+        .ingredients li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .ingredients li::before {
+            content: "✓";
+            color: #c49a16;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* METHOD */
+
+        .step {
+            margin-bottom: 25px;
+        }
+
+        .step h3 {
+            color: #063b2d;
+            margin-bottom: 6px;
+        }
+
+        /* STORY */
+
+        .story {
+            background: #063b2d;
+            color: white;
+            padding: 55px 8%;
+            border-radius: 16px;
+        }
+
+        .story h2 {
+            color: #f5c542;
+        }
+
+        .story p {
+            color: #eee;
+        }
+
+        /* TIPS */
+
+        .tips {
+            background: white;
+            padding: 35px;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px rgba(0,0,0,.07);
+        }
+
+        .tips ul {
+            padding-left: 20px;
+        }
+
+        .tips li {
+            margin-bottom: 12px;
+            color: #555;
+        }
+
+        /* VIDEO */
+
+        .video-box {
+            background: #031f18;
+            min-height: 300px;
+            border-radius: 16px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            color: white;
+            padding: 30px;
+        }
+
+        .video-box h2 {
+            color: #f5c542;
+        }
+
+        .youtube-btn {
+            display: inline-block;
+            margin-top: 18px;
+            background: #f5c542;
+            color: #031f18;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        .youtube-btn:hover {
+            background: white;
+        }
+
+        /* BACK */
+
+        .back {
+            display: inline-block;
+            margin: 0 0 35px;
+            color: #063b2d;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back:hover {
+            color: #c49a16;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #031f18;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        footer span {
+            color: #f5c542;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 900px) {
+
+            .info-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .ingredients-method {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 44px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero {
+                height: 400px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .container {
+                width: 90%;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .section {
+                padding: 45px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="logo">
+        TasteVoyage
+    </div>
+
+    <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../recipes.html">Recipes</a></li>
+        <li><a href="#">World Cuisine</a></li>
+        <li><a href="#">Food Stories</a></li>
+        <li><a href="#">Videos</a></li>
+        <li><a href="#">About</a></li>
+    </ul>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>Thai Green Curry</h1>
+
+        <p>
+            A fragrant Thai classic filled with herbs, coconut milk,
+            vegetables and layers of aromatic flavor.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- RECIPE INFO -->
+
+<div class="container">
+
+    <div class="info-grid">
+
+        <div class="info-box">
+            <strong>Preparation</strong>
+            <span>20 minutes</span>
+        </div>
+
+        <div class="info-box">
+            <strong>Cooking</strong>
+            <span>25 minutes</span>
+        </div>
+
+        <div class="info-box">
+            <strong>Servings</strong>
+            <span>4 people</span>
+        </div>
+
+        <div class="info-box">
+            <strong>Cuisine</strong>
+            <span>Thai</span>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ABOUT -->
+
+<section class="section">
+
+    <div class="container">
+
+        <h2>About Thai Green Curry</h2>
+
+        <p>
+            Thai Green Curry is one of Thailand's best-known dishes.
+            Its distinctive green color comes from fresh green chilies
+            and aromatic herbs used in the curry paste.
+        </p>
+
+        <p>
+            Coconut milk gives the curry a smooth and creamy texture,
+            while ingredients such as lemongrass, galangal, kaffir lime
+            and Thai basil create its characteristic fragrance.
+        </p>
+
+        <p>
+            It can be prepared with chicken, seafood, beef, tofu or
+            vegetables, making it a versatile dish for different tastes.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- INGREDIENTS + METHOD -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="ingredients-method">
+
+            <!-- INGREDIENTS -->
+
+            <div class="ingredients">
+
+                <h2>Ingredients</h2>
+
+                <ul>
+
+                    <li>400 ml coconut milk</li>
+
+                    <li>2–3 tablespoons green curry paste</li>
+
+                    <li>400 g chicken or tofu</li>
+
+                    <li>1 small eggplant</li>
+
+                    <li>1 red bell pepper</li>
+
+                    <li>1 cup Thai basil leaves</li>
+
+                    <li>2 kaffir lime leaves</li>
+
+                    <li>1 stalk lemongrass</li>
+
+                    <li>1 teaspoon fish sauce</li>
+
+                    <li>1 teaspoon palm sugar</li>
+
+                    <li>Green chilies</li>
+
+                    <li>Cooking oil</li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- METHOD -->
+
+            <div>
+
+                <h2>How To Prepare</h2>
+
+                <div class="step">
+
+                    <h3>01. Prepare the ingredients</h3>
+
+                    <p>
+                        Slice the chicken or tofu and prepare the vegetables.
+                        Bruise the lemongrass and tear the kaffir lime leaves
+                        slightly to release their aroma.
+                    </p>
+
+                </div>
+
+                <div class="step">
+
+                    <h3>02. Fry the curry paste</h3>
+
+                    <p>
+                        Heat a little oil in a pan. Add the green curry paste
+                        and cook gently until its fragrance becomes strong.
+                    </p>
+
+                </div>
+
+                <div class="step">
+
+                    <h3>03. Add coconut milk</h3>
+
+                    <p>
+                        Add part of the coconut milk and stir well with the
+                        curry paste. Allow it to simmer gently.
+                    </p>
+
+                </div>
+
+                <div class="step">
+
+                    <h3>04. Cook the main ingredients</h3>
+
+                    <p>
+                        Add the chicken or tofu and vegetables. Add the
+                        remaining coconut milk and simmer until everything
+                        is cooked through.
+                    </p>
+
+                </div>
+
+                <div class="step">
+
+                    <h3>05. Balance the flavors</h3>
+
+                    <p>
+                        Add fish sauce and palm sugar according to taste.
+                        Finish with Thai basil and fresh green chilies.
+                    </p>
+
+                </div>
+
+                <div class="step">
+
+                    <h3>06. Serve</h3>
+
+                    <p>
+                        Serve the curry hot with steamed jasmine rice.
+                        Garnish with fresh basil or sliced chili.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- HISTORY -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="story">
+
+            <h2>The Story Behind Thai Green Curry</h2>
+
+            <p>
+                Thai curry traditions developed through the use of local
+                herbs, chilies, spices and coconut. Green curry became
+                especially recognizable because of its use of fresh green
+                ingredients.
+            </p>
+
+            <p>
+                Thai cuisine is famous for balancing several flavors in
+                one dish. Sweet, salty, spicy, sour and aromatic elements
+                can work together rather than one flavor dominating the
+                entire meal.
+            </p>
+
+            <p>
+                Today, Thai Green Curry is enjoyed both inside Thailand
+                and around the world, with many regional and personal
+                variations.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TIPS -->
+
+<section class="section">
+
+    <div class="container">
+
+        <h2>Chef's Tips</h2>
+
+        <div class="tips">
+
+            <ul>
+
+                <li>
+                    Use fresh herbs whenever possible for a stronger
+                    fragrance.
+                </li>
+
+                <li>
+                    Add the coconut milk gradually rather than boiling
+                    everything aggressively.
+                </li>
+
+                <li>
+                    Adjust the amount of green curry paste according to
+                    your preferred level of heat.
+                </li>
+
+                <li>
+                    Thai basil added near the end keeps its aroma fresh.
+                </li>
+
+                <li>
+                    Serve immediately with warm jasmine rice for the best
+                    texture and flavor.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- VIDEO -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="video-box">
+
+            <div>
+
+                <h2>Watch The Recipe</h2>
+
+                <p>
+                    Follow TasteVoyage for delicious recipes,
+                    food stories and culinary journeys.
+                </p>
+
+                <!-- Add your YouTube video URL here -->
+
+                <a href="#"
+                   class="youtube-btn"
+                   target="_blank">
+                    ▶ Watch on YouTube
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- BACK -->
+
+<div class="container">
+
+    <a href="../recipes.html" class="back">
+        ← Back to Recipes
+    </a>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 <span>TasteVoyage</span>.
+        Discover flavors. Explore the world.
+    </p>
+
+</footer>
+
+</body>
+</html>
